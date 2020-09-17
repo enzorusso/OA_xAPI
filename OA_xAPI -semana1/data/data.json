@@ -1,0 +1,24 @@
+[
+   {
+      "id": "",
+      "nome": "",
+      "tempoNoObjeto": "",
+      "midia": {
+         "video": {
+            "tempoTotal": "",
+            "evento": []
+         },
+         "audio": {
+            "tempoTotal": "",
+            "evento": []
+         }
+      },
+      "paginas": {
+         "tempoMedio": "",
+         "pagina": {
+            "numero": "",
+            "tempo": []
+         }
+      }
+   }
+]

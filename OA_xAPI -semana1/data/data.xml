@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<acessos>
+    <acesso id="" nome="" tempoNoObjeto="">
+        <midia>
+            <video tempoTotal="">
+                <evento data="" acao="" momento=""/>
+            </video>
+            <audio tempoTotal="">
+                <evento data="" acao="" momento=""/>
+            </audio>
+        </midia>
+        <paginas tempoMedio="">
+            <pagina numero="">
+                <tempo/>
+            </pagina>
+        </paginas>
+    </acesso>
+</acessos>
