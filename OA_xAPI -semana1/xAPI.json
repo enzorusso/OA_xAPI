@@ -2,16 +2,31 @@
   {
     "nome": "joao",
     "verbo": "Acessou o Objeto ALGORITMOS E PROGRAMACAO I",
-    "data": "Thursday 17th of September 2020 07:32:43 PM"
+    "data": "Monday 21st of September 2020 07:34:34 PM"
   },
   {
     "nome": "joao",
     "verbo": "Deu play no audio audio_one",
-    "data": "Thursday 17th of September 2020 07:32:44 PM"
+    "data": "Monday 21st of September 2020 07:34:35 PM"
   },
   {
     "nome": "joao",
     "verbo": "Deu pause no audio audio_one",
-    "data": "Thursday 17th of September 2020 07:32:48 PM"
+    "data": "Monday 21st of September 2020 07:34:39 PM"
+  },
+  {
+    "nome": "joao",
+    "verbo": "Deu play no audio audio_one",
+    "data": "Monday 21st of September 2020 07:34:50 PM"
+  },
+  {
+    "nome": "joao",
+    "verbo": "Deu pause no audio audio_one",
+    "data": "Monday 21st of September 2020 07:35:08 PM"
+  },
+  {
+    "nome": "joao",
+    "verbo": "Ouviu o audio ate o final audio_one",
+    "data": "Monday 21st of September 2020 07:35:08 PM"
   }
 ]

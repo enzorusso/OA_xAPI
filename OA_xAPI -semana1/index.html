@@ -60,6 +60,18 @@ $(document).ready(function () {
 		);
 	});
 
+	$("audio").on('ended', function () {	//QUANDO ACABAR EXECUCAO
+		var elemento = $(this).attr('id'); 
+		var vUrl = "control.php";
+		var vData = { nome:"joao", audio_ended:elemento };
+		$.post(
+			vUrl,
+			vData
+		);
+	});
+
+
+
 	//VÍDEO
 	$("video").on('play', function () { //QUANDO DER PLAY
 		var elemento = $(this).attr('id'); 
@@ -80,6 +92,17 @@ $(document).ready(function () {
 			vData
 		);
 	});
+
+	$("video").on('ended', function () {	// QUANDO ACABAR EXECUCAO
+		var elemento = $(this).attr('id'); 
+		var vUrl = "control.php";
+		var vData = { nome:"joao", video_ended:elemento };
+		$.post(
+			vUrl,
+			vData
+		);
+	});
+
 
 		// criando as variáveis e enviando POST para PHP
 		var vUrl = "control.php";

@@ -69,7 +69,26 @@ $data =  date('l jS \of F Y h:i:s A');
                 }   
             }
 
-            //Trata informação de ID e pause no audio
+            //Trata informação de ID e final no audio
+            if(!empty($_POST["nome"]) && !empty($_POST["audio_ended"])){
+                $verbo = "Ouviu o audio ate o final ".$_POST["audio_ended"];
+
+                $current_data = file_get_contents($file);
+                $array_data = json_decode($current_data, true);
+                $extra = array (
+                    'nome' => $_POST["nome"],
+                    'verbo' => $verbo,
+                    'data' => $data
+                );
+                $array_data[] = $extra;
+                $final_data = json_encode($array_data);
+                if(file_put_contents($file, $final_data))
+                {   
+                    $message = "<label class='text-success'>Sucesso!</p>";
+                }   
+            }
+
+            // Trata informação de ID e pause no audio
             if(!empty($_POST["nome"]) && !empty($_POST["audio_pause"])){
                 $verbo = "Deu pause no audio ".$_POST["audio_pause"];
 
@@ -107,9 +126,28 @@ $data =  date('l jS \of F Y h:i:s A');
                 }   
             }
 
+            //Trata informação de ID e final no video
+            if(!empty($_POST["nome"]) && !empty($_POST["video_ended"])){
+                $verbo = "Viu o video ate o final ".$_POST["video_ended"];
+
+                $current_data = file_get_contents($file);
+                $array_data = json_decode($current_data, true);
+                $extra = array (
+                    'nome' => $_POST["nome"],
+                    'verbo' => $verbo,
+                    'data' => $data
+                );
+                $array_data[] = $extra;
+                $final_data = json_encode($array_data);
+                if(file_put_contents($file, $final_data))
+                {   
+                    $message = "<label class='text-success'>Sucesso!</p>";
+                }   
+            }
+
             //Trata informação de ID e pause no video
             if(!empty($_POST["nome"]) && !empty($_POST["video_pause"])){
-                $verbo = "Deu pause no audio ".$_POST["video_pause"];
+                $verbo = "Deu pause no video ".$_POST["video_pause"];
 
                 $current_data = file_get_contents($file);
                 $array_data = json_decode($current_data, true);
