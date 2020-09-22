@@ -37,7 +37,15 @@
 <script>
 $(document).ready(function () {
 	alert("inicio");
-	 paginaAtual = 1;
+	paginaAtual = 1;
+
+	// criando as variáveis e enviando POST para PHP
+	var vUrl = "control.php";
+	var vData = { nome:"joao", inicio:"1" };
+	$.post(
+		vUrl, 
+		vData
+	);
 
 	 //ÁUDIO
 	$("audio").on('play', function () { //QUANDO DER PLAY
@@ -104,13 +112,29 @@ $(document).ready(function () {
 	});
 
 
-		// criando as variáveis e enviando POST para PHP
+
+	//EXERCÍCIOS
+	$('input:radio').on('click', function(e) {
+		var elemento = $(this).attr('id'); //ID da alternativa 
+		var $thisRadio = $(this); //ID da alternativa 
+		var value_alternativa = $thisRadio.val(); // VALUE da alternativa
 		var vUrl = "control.php";
-		var vData = { nome:"joao", inicio:"1" };
+		var vData = { nome:"joao", alternativa:value_alternativa };
 		$.post(
-			vUrl, 
+			vUrl,
 			vData
 		);
+	});	
+
+	$('div').on('click', function() {
+		var elemento = $(this).attr('id'); //ID do exercicio
+		var vUrl = "control.php";
+		var vData = { nome:"joao", exercicio:elemento };
+		$.post(
+			vUrl,
+			vData
+		);
+	});
 });
 
 function startRoutine() { //está tratando da troca de páginas e salvando no json
@@ -245,14 +269,18 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 						assinale a alternativa em que a operação descrita é referente à coleção, ou seja, à Casa.</h4>
 					<p>
 						<div id="exe1_1" align="left" style="background-color:#F1F1ED; padding:10px">
-							<p><input type="radio" id="radio1_1_1" name="alternativa1_1" value="" /> Método de acesso à
-								identificação de uma peça</p>
-							<p><input type="radio" id="radio1_1_2" name="alternativa1_1" value="" /> Método que
-								identifica o tamanho em metros quadrados de uma peça</p>
-							<p><input type="radio" id="radio1_1_3" name="alternativa1_1" value="" /> Método que altera
-								as dimesões de uma peça</p>
-							<p><input type="radio" id="radio1_1_4" name="alternativa1_1" value="" /> Método que permite
-								calcular a área total da casa</p>
+							<p><input type="radio" id="radio1_1_1" name="alternativa1_1" value="Metodo de acesso a identificacao de uma peca" 
+								/> 
+								Método de acesso à identificação de uma peça</p>
+							<p><input type="radio" id="radio1_1_2" name="alternativa1_1" value="Metodo que identifica o tamanho em metros quadrados de uma peca" 
+								/> 
+								Método que identifica o tamanho em metros quadrados de uma peça</p>
+							<p><input type="radio" id="radio1_1_3" name="alternativa1_1" value="Metodo que altera as dimesoes de uma peca" 
+								/> 
+								Método que altera as dimesões de uma peça</p>
+							<p><input type="radio" id="radio1_1_4" name="alternativa1_1" value="Metodo que permite calcular a area total da casa" 
+								/> 
+								Método que permite calcular a área total da casa</p>
 						</div>
 						<div id="exe1_1_feedback" align="center" style="padding:10px"></div><a class="link"><img
 								id="check1_1" src="images/check.png" alt="Check"></a>
@@ -265,14 +293,18 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 						está vazio para responder esta questão.</h4>
 					<p>
 						<div id="exe1_2" align="left" style="background-color:#F1F1ED; padding:10px">
-							<p><input type="radio" id="radio1_2_1" name="alternativa1_2" value="" /> Aluno ultimo =
-								lista.get();</p>
-							<p><input type="radio" id="radio1_2_2" name="alternativa1_2" value="" /> Aluno ultimo =
-								lista.get(size());</p>
-							<p><input type="radio" id="radio1_2_3" name="alternativa1_2" value="" /> Aluno ultimo =
-								lista.get(size()-1);</p>
-							<p><input type="radio" id="radio1_2_4" name="alternativa1_2" value="" /> Aluno ultimo =
-								lista.get(lista.size()-1);</p>
+							<p><input type="radio" id="radio1_2_1" name="alternativa1_2" value="Aluno ultimo = lista.get();" 
+								/> 
+								Aluno ultimo = lista.get();</p>
+							<p><input type="radio" id="radio1_2_2" name="alternativa1_2" value="Aluno ultimo = lista.get(size());" 
+								/> 
+								Aluno ultimo = lista.get(size());</p>
+							<p><input type="radio" id="radio1_2_3" name="alternativa1_2" value="Aluno ultimo = lista.get(size()-1);" 
+								/> 
+								Aluno ultimo = lista.get(size()-1);</p>
+							<p><input type="radio" id="radio1_2_4" name="alternativa1_2" value="Aluno ultimo = lista.get(lista.size()-1);" 
+								/> 
+								Aluno ultimo = lista.get(lista.size()-1);</p>
 						</div>
 						<div id="exe1_2_feedback" align="center" style="padding:10px"></div><a class="link"><img
 								id="check1_2" src="images/check.png" alt="Check"></a>
@@ -293,15 +325,15 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 			<section>
 				<audio id="audio_one" src="audio.mp3" controls></audio>
 			</section>
-
+			
 		</div>
-
+		
 	</div>
-
-
+	
+	
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.min.js"></script>
-
+	
 	<script>
 
 		// Full list of configuration options available here:

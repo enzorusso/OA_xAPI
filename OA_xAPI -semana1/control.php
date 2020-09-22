@@ -163,6 +163,25 @@ $data =  date('l jS \of F Y h:i:s A');
                     $message = "<label class='text-success'>Sucesso!</p>";
                 }   
             }
+
+            //Trata informação de ID e escolha da alternativa 
+            if(!empty($_POST["nome"]) && !empty($_POST["alternativa"] . $_POST["exercicio"])){
+                $verbo = "Escolheu ".$_POST["alternativa"] ." do Exercicio ".$_POST["exercicio"];
+
+                $current_data = file_get_contents($file);
+                $array_data = json_decode($current_data, true);
+                $extra = array (
+                    'nome' => $_POST["nome"],
+                    'verbo' => $verbo,
+                    'data' => $data
+                );
+                $array_data[] = $extra;
+                $final_data = json_encode($array_data);
+                if(file_put_contents($file, $final_data))
+                {   
+                    $message = "<label class='text-success'>Sucesso!</p>";
+                }   
+            }
             //FIM ENZO
         } else {
             echo "Arquivo JSON não existe!";
