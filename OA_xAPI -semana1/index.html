@@ -116,7 +116,7 @@ $(document).ready(function () {
 	//EXERCÍCIOS
 	$('input:radio').on('click', function(e) {
 		var elemento = $(this).attr('id'); //ID da alternativa 
-		var $thisRadio = $(this); //ID da alternativa 
+		var $thisRadio = $(this); //ID da alternativa para pegar o VALUE
 		var value_alternativa = $thisRadio.val(); // VALUE da alternativa
 		var vUrl = "control.php";
 		var vData = { nome:"joao", alternativa:value_alternativa };
