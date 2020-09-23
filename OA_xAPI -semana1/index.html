@@ -139,22 +139,22 @@ $(document).ready(function () {
 
 function startRoutine() { //está tratando da troca de páginas e salvando no json
 		
-		var actual_page = window.location.href;
-		var part = actual_page.split('#', 2);
-		var mypage = part[1].split('/', 2);
-		var pagUrl = mypage[1];
+	var actual_page = window.location.href;
+	var part = actual_page.split('#', 2);
+	var mypage = part[1].split('/', 2);
+	var pagUrl = mypage[1];
 
-		if(paginaAtual != pagUrl){
-			paginaAtual = pagUrl;
+	if(paginaAtual != pagUrl){
+		paginaAtual = pagUrl;
 			
-			// criando as variáveis e envia post
-			var vUrl = "control.php";
-			var vData = { nome:"joao", pagina:paginaAtual };
-			$.post(
-				vUrl, 
-				vData
-			);
-		}
+		// criando as variáveis e envia post
+		var vUrl = "control.php";
+		var vData = { nome:"joao", pagina:paginaAtual };
+		$.post(
+			vUrl, 
+			vData
+		);
+	}
 }
 
 </script>

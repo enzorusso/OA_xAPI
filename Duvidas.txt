@@ -1,0 +1,3 @@
+Ao usuário executar as mídias até o final, está sendo armazenado no JSON tanto a função onEnded quanto a onPause;
+
+Quando o usuário escolhe uma alternativa, está sendo armazenado de forma separada a atividade e o exercício 
