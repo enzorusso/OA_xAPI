@@ -58,14 +58,20 @@ $(document).ready(function () {
 		);
 	});
 
-	$("audio").on('pause', function () { //QUANDO DER PAUSE
-		var elemento = $(this).attr('id');
-		var vUrl = "control.php";
-		var vData = { nome:"joao", audio_pause:elemento };
-		$.post(
-			vUrl,
-			vData
-		);
+	$("audio").on('pause', function (zzt) { //QUANDO DER PAUSE
+
+		var seconds = (this).duration;
+		var currentTime = (this).currentTime; 
+
+		if(seconds != currentTime){
+			var elemento = $(this).attr('id');
+			var vUrl = "control.php";
+			var vData = { nome:"joao", audio_pause:elemento };
+			$.post(
+				vUrl,
+				vData
+			);
+		}
 	});
 
 	$("audio").on('ended', function () {	//QUANDO ACABAR EXECUCAO
@@ -92,13 +98,19 @@ $(document).ready(function () {
 	});
 
 	$("video").on('pause', function () { //QUANDO DER PAUSE
-		var elemento = $(this).attr('id'); 
-		var vUrl = "control.php";
-		var vData = { nome:"joao", video_pause:elemento };
-		$.post(
-			vUrl,
-			vData
-		);
+
+		var seconds = (this).duration;
+		var currentTime = (this).currentTime; 
+
+		if(seconds != currentTime){
+			var elemento = $(this).attr('id'); 
+			var vUrl = "control.php";
+			var vData = { nome:"joao", video_pause:elemento };
+			$.post(
+				vUrl,
+				vData
+			);
+		}
 	});
 
 	$("video").on('ended', function () {	// QUANDO ACABAR EXECUCAO
@@ -115,29 +127,26 @@ $(document).ready(function () {
 
 	//EXERCÍCIOS
 	$('input:radio').on('click', function(e) {
-		var elemento = $(this).attr('id'); //ID da alternativa 
+		
+		var pai = $(this).parent().parent().attr('id'); //Pega o elemento PAI (exercício)
+		
+		
+		//var elemento = $(this).attr('id'); //ID da alternativa 
 		var $thisRadio = $(this); //ID da alternativa para pegar o VALUE
 		var value_alternativa = $thisRadio.val(); // VALUE da alternativa
 		var vUrl = "control.php";
-		var vData = { nome:"joao", alternativa:value_alternativa };
+		var vData = { nome:"joao", exercicio:pai, alternativa:value_alternativa };
 		$.post(
 			vUrl,
 			vData
 		);
 	});	
 
-	$('div').on('click', function() {
-		var elemento = $(this).attr('id'); //ID do exercicio
-		var vUrl = "control.php";
-		var vData = { nome:"joao", exercicio:elemento };
-		$.post(
-			vUrl,
-			vData
-		);
-	});
 });
 
 function startRoutine() { //está tratando da troca de páginas e salvando no json
+	var numeroPp = $(".slides").children().length; //pega o número de páginas do OA.. div que estão dentro de slides..
+	//alert(numeroPp);
 		
 	var actual_page = window.location.href;
 	var part = actual_page.split('#', 2);
@@ -170,7 +179,7 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 				<h2>Algoritmos e Programação I</h2>
 				<p>Introdução a Coleções: ArrayList</p>
 			</section>
-			<section data-background="images/objetos/">
+			<section id="colecao" data-background="images/objetos/">
 				<h2>Coleção</h2>
 				<p>É um objeto capaz de armazenar referências para um grupo de objetos de uma outra classe.</p>
 				<p class="fragment">Exemplo1: Uma turma de alunos</p>
@@ -269,7 +278,7 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 						assinale a alternativa em que a operação descrita é referente à coleção, ou seja, à Casa.</h4>
 					<p>
 						<div id="exe1_1" align="left" style="background-color:#F1F1ED; padding:10px">
-							<p><input type="radio" id="radio1_1_1" name="alternativa1_1" value="Metodo de acesso a identificacao de uma peca" 
+							<p id="teste1"><input type="radio" id="radio1_1_1" name="alternativa1_1" value="Metodo de acesso a identificacao de uma peca" 
 								/> 
 								Método de acesso à identificação de uma peça</p>
 							<p><input type="radio" id="radio1_1_2" name="alternativa1_1" value="Metodo que identifica o tamanho em metros quadrados de uma peca" 

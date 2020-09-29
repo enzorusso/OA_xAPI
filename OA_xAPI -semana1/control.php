@@ -165,8 +165,8 @@ $data =  date('l jS \of F Y h:i:s A');
             }
 
             //Trata informação de ID e escolha da alternativa 
-            if(!empty($_POST["nome"]) && !empty($_POST["alternativa"]) ?: !empty($_POST["exercicio"])){
-                $verbo = "Escolheu ".$_POST["alternativa"]." do Exercicio ".$_POST["exercicio"];
+            if(!empty($_POST["nome"]) && !empty($_POST["alternativa"]) && !empty($_POST["exercicio"])){
+                $verbo = "Escolheu alternativa '".$_POST["alternativa"]."' do Exercicio '".$_POST["exercicio"]."'.";
                 
                 $current_data = file_get_contents($file);
                 $array_data = json_decode($current_data, true);
