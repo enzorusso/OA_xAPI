@@ -202,7 +202,7 @@ $data =  date('l jS \of F Y h:i:s A');
 
             //Trata informação de ID e retry
             if(!empty($_POST["nome"]) && !empty($_POST["retry"])){
-                $verbo = "Tentou novamente? ".$_POST["retry"];
+                $verbo = $_POST["retry"];
                 $current_data = file_get_contents($file);
                 $array_data = json_decode($current_data, true);
                 $extra = array (
