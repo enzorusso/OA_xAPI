@@ -1,3 +1,2 @@
-Ao usuário executar as mídias até o final, está sendo armazenado no JSON tanto a função onEnded quanto a onPause;
-
-Quando o usuário escolhe uma alternativa, está sendo armazenado de forma separada a atividade e o exercício 
+Nessa semana, as dúvidas ficaram em conta de capturar a ação do botão para verificar se o usuário acertou ou errou o exercício. A dúvida: como resgatar as informações do botão que estão lá embaixo e juntar com o scipt do exercício que está lá em cima, no ('input:radio')?
+Outra coisa e na forma de salvar o JSON, estou salvando o desempenho separado, está certo? e também a mensagem que passei no 'retry' está coerente?
