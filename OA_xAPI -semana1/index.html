@@ -260,11 +260,89 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 
 			<script>
 				$(document).ready(function () {
-					var total_modulo1 = 2; var acertos_modulo1 = 0; var FeedbackCerto1 = "Muito Bem."; var FeedbackErrado1 = "Retome seus estudos. Leia o capítulo 13 do Big Java."; $("#retry_modulo1").click(function () { $("input[name='alternativa1_1']").removeAttr('disabled', 'disabled'); $("input[name='alternativa1_1']:radio").attr("checked", false); $("#exe1_1").css('background-color', '#F1F1ED'); $("#check1_1").show(); $("#exe1_1_feedback").html(""); $("input[name='alternativa1_2']").removeAttr('disabled', 'disabled'); $("input[name='alternativa1_2']:radio").attr("checked", false); $("#exe1_2").css('background-color', '#F1F1ED'); $("#check1_2").show(); $("#exe1_2_feedback").html(""); $("#feedback_modulo1").html(""); acertos_modulo1 = 0; $("#textoDesempenho1").html(acertos_modulo1); }); var resposta_certa1_1 = 4; var respostaCerta1_1 = "Exige que seja somadas as áreas das peças de toda casa."; var respostaErrada1_1 = "Todos as demais alternativas referem-se a uma única peça."; $("#check1_1").click(function () { if ($("#radio1_1_" + resposta_certa1_1 + "").is(":checked")) { acertos_modulo1++; $("#exe1_1").css('background-color', '#ADE7A9'); $("#exe1_1_feedback").html(respostaCerta1_1); } else { $("#exe1_1").css('background-color', '#E9A8A8'); $("#exe1_1_feedback").html(respostaErrada1_1); } $("input[name='alternativa1_1']").attr('disabled', 'disabled'); $("#check1_1").hide(); var desempenho = (acertos_modulo1 / total_modulo1) * 100; $("#textoDesempenho1").html(desempenho); if (desempenho >= 70) { $("#feedback_modulo1").html(FeedbackCerto1); } if (desempenho < 70) { $("#feedback_modulo1").html(FeedbackErrado1); } }); var resposta_certa1_2 = 4; var FeedbackArray1_2 = ["Erro: método get sem parâmetro.", "Erro: método size foi chamado sem o objeto ArrayList.", "Erro: método size foi chamado sem o objeto ArrayList", "Erro: método size foi chamado sem o objeto ArrayList"]; var respostaCerta1_2 = "þParabéns!Þ"; var respostaErrada1_2 = "þErrado.Þ"; $("#check1_2").click(function () {
-						if ($("#radio1_2_" + resposta_certa1_2 + "").is(":checked")) { acertos_modulo1++; $("#exe1_2").css('background-color', '#ADE7A9'); } else { $("#exe1_2").css('background-color', '#E9A8A8'); } if ($("#radio1_2_1").is(":checked")) { $("#exe1_2_feedback").html(FeedbackArray1_2[0]); } if ($("#radio1_2_2").is(":checked")) { $("#exe1_2_feedback").html(FeedbackArray1_2[1]); } if ($("#radio1_2_3").is(":checked")) { $("#exe1_2_feedback").html(FeedbackArray1_2[2]); } if ($("#radio1_2_4").is(":checked")) { $("#exe1_2_feedback").html(FeedbackArray1_2[3]); } $("input[name='alternativa1_2']").attr('disabled', 'disabled'); $("#check1_2").hide(); var desempenho = (acertos_modulo1 / total_modulo1) * 100; $("#textoDesempenho1").html(desempenho); if (desempenho >= 70) { $("#feedback_modulo1").html(FeedbackCerto1); }
+					var total_modulo1 = 2; 
+					var acertos_modulo1 = 0; 
+					var FeedbackCerto1 = "Muito Bem."; 
+					var FeedbackErrado1 = "Retome seus estudos. Leia o capítulo 13 do Big Java."; 
+					$("#retry_modulo1").click(function () { 
+						$("input[name='alternativa1_1']").removeAttr('disabled', 'disabled'); 
+						$("input[name='alternativa1_1']:radio").attr("checked", false); 
+						$("#exe1_1").css('background-color', '#F1F1ED'); 
+						$("#check1_1").show(); 
+						$("#exe1_1_feedback").html(""); 
+						$("input[name='alternativa1_2']").removeAttr('disabled', 'disabled'); 
+						$("input[name='alternativa1_2']:radio").attr("checked", false); 
+						$("#exe1_2").css('background-color', '#F1F1ED'); 
+						$("#check1_2").show(); 
+						$("#exe1_2_feedback").html(""); 
+						$("#feedback_modulo1").html(""); 
+						acertos_modulo1 = 0; 
+						$("#textoDesempenho1").html(acertos_modulo1); 
+						
+						//ALTEREI
+						bool = "sim";
+						var vUrl = "control.php";
+						var vData = { nome:"joao", retry:bool }; //FUNCIONOU
+						$.post(
+							vUrl,
+							vData
+						);
+						//ALTEREI
+					}); 
+					var resposta_certa1_1 = 4; 
+					var respostaCerta1_1 = "Exige que seja somadas as áreas das peças de toda casa."; 
+					var respostaErrada1_1 = "Todos as demais alternativas referem-se a uma única peça."; 
+					$("#check1_1").click(function () { 
+						if ($("#radio1_1_" + resposta_certa1_1 + "").is(":checked")) { 
+							acertos_modulo1++; $("#exe1_1").css('background-color', '#ADE7A9'); 
+							$("#exe1_1_feedback").html(respostaCerta1_1); 
+						} else { 
+							$("#exe1_1").css('background-color', '#E9A8A8'); 
+							$("#exe1_1_feedback").html(respostaErrada1_1); 
+						} 
+						$("input[name='alternativa1_1']").attr('disabled', 'disabled'); 
+						$("#check1_1").hide(); 
+						var desempenho = (acertos_modulo1 / total_modulo1) * 100; 
+						$("#textoDesempenho1").html(desempenho); 
+						if (desempenho >= 70) { 
+							$("#feedback_modulo1").html(FeedbackCerto1); 
+						} 
+						if (desempenho < 70) { 
+							$("#feedback_modulo1").html(FeedbackErrado1); 
+						} 
+					}); 
+					var resposta_certa1_2 = 4; 
+					var FeedbackArray1_2 = ["Erro: método get sem parâmetro.", "Erro: método size foi chamado sem o objeto ArrayList.", "Erro: método size foi chamado sem o objeto ArrayList", "Erro: método size foi chamado sem o objeto ArrayList"]; 
+					var respostaCerta1_2 = "þParabéns!Þ"; 
+					var respostaErrada1_2 = "þErrado.Þ"; 
+					$("#check1_2").click(function () {	
+						if ($("#radio1_2_" + resposta_certa1_2 + "").is(":checked")) { 
+							acertos_modulo1++; 
+							$("#exe1_2").css('background-color', '#ADE7A9'); 
+						} 
+						else { 
+							$("#exe1_2").css('background-color', '#E9A8A8'); 
+						} 
+						if ($("#radio1_2_1").is(":checked")) { 
+							$("#exe1_2_feedback").html(FeedbackArray1_2[0]);
+						} 
+						if ($("#radio1_2_2").is(":checked")) { 
+							$("#exe1_2_feedback").html(FeedbackArray1_2[1]); 
+						} 
+						if ($("#radio1_2_3").is(":checked")) { 
+							$("#exe1_2_feedback").html(FeedbackArray1_2[2]); 
+						} 
+						if ($("#radio1_2_4").is(":checked")) { 
+							$("#exe1_2_feedback").html(FeedbackArray1_2[3]); 
+						} 
+						$("input[name='alternativa1_2']").attr('disabled', 'disabled'); 
+						$("#check1_2").hide(); var desempenho = (acertos_modulo1 / total_modulo1) * 100; 
+						$("#textoDesempenho1").html(desempenho); 
+						if (desempenho >= 70) { $("#feedback_modulo1").html(FeedbackCerto1); }
 						if (desempenho < 70) { $("#feedback_modulo1").html(FeedbackErrado1); }
 						
 						//ALTEREI
+
 						var vUrl = "control.php";
 						var vData = { nome:"joao", desempenho:desempenho }; //FUNCIONOU
 						$.post(
