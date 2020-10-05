@@ -165,7 +165,7 @@ $data =  date('l jS \of F Y h:i:s A');
             }
 
             //Trata informação de ID e escolha da alternativa 
-            if(!empty($_POST["nome"]) && !empty($_POST["alternativa"]) && !empty($_POST["exercicio"])){
+            if(!empty($_POST["nome"]) && !empty($_POST["alternativa"]) && !empty($_POST["exercicio"])) {
                 $verbo = "Escolheu alternativa '".$_POST["alternativa"]."' do Exercicio '".$_POST["exercicio"]."'.";
                 $current_data = file_get_contents($file);
                 $array_data = json_decode($current_data, true);
@@ -203,6 +203,24 @@ $data =  date('l jS \of F Y h:i:s A');
             //Trata informação de ID e retry
             if(!empty($_POST["nome"]) && !empty($_POST["retry"])){
                 $verbo = $_POST["retry"];
+                $current_data = file_get_contents($file);
+                $array_data = json_decode($current_data, true);
+                $extra = array (
+                    'nome' => $_POST["nome"],
+                    'verbo' => $verbo,
+                    'data' => $data
+                );
+                $array_data[] = $extra;
+                $final_data = json_encode($array_data);
+                if(file_put_contents($file, $final_data))
+                {   
+                    $message = "<label class='text-success'>Sucesso!</p>";
+                }   
+            }
+
+            //Trata informação de ID e feedback
+            if(!empty($_POST["nome"]) && !empty($_POST["feedback"]) && !empty($_POST["ex"])){
+                $verbo = "Resposta '".$_POST["feedback"]."' do Exercicio '".$_POST["ex"]."'.";
                 $current_data = file_get_contents($file);
                 $array_data = json_decode($current_data, true);
                 $extra = array (

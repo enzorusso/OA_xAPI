@@ -294,11 +294,26 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 					var respostaErrada1_1 = "Todos as demais alternativas referem-se a uma única peça."; 
 					$("#check1_1").click(function () { 
 						if ($("#radio1_1_" + resposta_certa1_1 + "").is(":checked")) { 
-							acertos_modulo1++; $("#exe1_1").css('background-color', '#ADE7A9'); 
+							acertos_modulo1++; 
+							$("#exe1_1").css('background-color', '#ADE7A9'); 
 							$("#exe1_1_feedback").html(respostaCerta1_1); 
+							var elementoExe = $(this).attr('id'); 
+							var vUrl = "control.php";
+							var vData = { nome:"joao", feedback:"certa", ex: elementoExe }; //FUNCIONOU
+							$.post(
+								vUrl,
+								vData
+							);
 						} else { 
 							$("#exe1_1").css('background-color', '#E9A8A8'); 
 							$("#exe1_1_feedback").html(respostaErrada1_1); 
+							var elementoExe = $(this).attr('id'); 
+							var vUrl = "control.php";
+							var vData = { nome:"joao", feedback:"errada", ex: elementoExe }; //FUNCIONOU
+							$.post(
+								vUrl,
+								vData
+							);
 						} 
 						$("input[name='alternativa1_1']").attr('disabled', 'disabled'); 
 						$("#check1_1").hide(); 
@@ -319,9 +334,25 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 						if ($("#radio1_2_" + resposta_certa1_2 + "").is(":checked")) { 
 							acertos_modulo1++; 
 							$("#exe1_2").css('background-color', '#ADE7A9'); 
+							$("#exe1_2_feedback").html(respostaCerta1_2); 
+							var elementoExe = $(this).attr('id'); 
+							var vUrl = "control.php";
+							var vData = { nome:"joao", feedback:"certa", ex: elementoExe }; //FUNCIONOU
+							$.post(
+								vUrl,
+								vData
+							);
 						} 
 						else { 
 							$("#exe1_2").css('background-color', '#E9A8A8'); 
+							$("#exe1_2_feedback").html(respostaErrada1_2); 
+							var elementoExe = $(this).attr('id'); 
+							var vUrl = "control.php";
+							var vData = { nome:"joao", feedback:"errada", ex: elementoExe }; //FUNCIONOU
+							$.post(
+								vUrl,
+								vData
+							);
 						} 
 						if ($("#radio1_2_1").is(":checked")) { 
 							$("#exe1_2_feedback").html(FeedbackArray1_2[0]);
