@@ -172,7 +172,7 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
 
-			<section data-background="images/objetos/">
+			<section id="pagina inicial" data-background="images/objetos/">
 				<h2>Algoritmos e Programação I</h2>
 				<p>Introdução a Coleções: ArrayList</p>
 			</section>
@@ -183,7 +183,7 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 				<p class="fragment">Exemplo2: Um cadastro de funcionários</p>
 				<p class="fragment">Exige o uso da classe java.util.ArrayList</p>
 			</section>
-			<section data-background="images/objetos/    ">
+			<section id="modelando com colecoes" data-background="images/objetos/    ">
 				<h2>Modelando com Coleções </h2>
 				<p>Ao modelar um problema, é necessário definir a classe que representa os elementos de uma coleção e
 					aquela que representa a própria coleção (o grupo de objetos). </p>
@@ -192,24 +192,25 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 				<p class="fragment">Classe Grupo: representa o grupo de objetos. É importante identificar as operações
 					que se aplicam à coleção como um todo. </p>
 			</section>
-			<section data-background="images/objetos/ ">
+			<section id="exemplo cadastro de funcionario" data-background="images/objetos/ ">
 				<h2>Exemplo: </h2>
 				<p>Cadastro de Funcionários </p>
 				<p class="fragment">Classe Elemento: Funcionário (operações: aumentar salário, alterar nome, ...) </p>
 				<p class="fragment">Classe Grupo: Cadastro (operações: admitir ou demitir funcionário, localizar um
 					funcionário pelo seu cpf,...) </p>
 			</section>
-			<section data-background="images/objetos/">
+			<section id="metodos do ArrayList" data-background="images/objetos/">
 				<h2>Métodos da classe ArrayList</h2><img src="images/tcc_oa.jpg">
 			</section>
 
 
-			<section data-background="images/objetos/">
+			<section id="importando do pacote java" data-background="images/objetos/">
 				<h2>Importando do pacote java</h2>
 				<p>Para usar um objeto ArrayList é necessário importar o seu pacote, conforme apresentado a seguir:</p>
 				<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">import java.util.ArrayList;</code></pre>
 			</section>
-			<section data-background="images/objetos/   ">
+
+			<section id="criando objeto ArrayList" data-background="images/objetos/   ">
 				<h2>Criando um objeto ArrayList </h2>
 				<p>Construtor: ArrayList<E>() //Cria uma coleção vazia de objetos (inicialmente com 10 referências
 						nulas) </p>
@@ -217,43 +218,45 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 				<p class="fragment">Declaração: ArrayList<Funcionario> cadastro; </p>
 				<p class="fragment">Instanciação: cadastro = new ArrayList<Funcionario>(); </p>
 			</section>
-			<section data-background="images/objetos/">
+
+			<section id="exemplo criacao do cadastro de funcionario" data-background="images/objetos/">
 				<h2>Exemplo de criação do cadastro de funcionários</h2><img src="images/tc_2.jpg">
 			</section>
 
 
-			<section data-background="images/objetos/">
+			<section id="metodo add" data-background="images/objetos/">
 				<p>Como incluir um objeto no ArrayList</p>
 				<p>Usando o método add</p><img src="images/tc_3.jpg">
 			</section>
-			<section data-background="images/objetos/">
+
+			<section id="exemplo de inclusao de funcionario" data-background="images/objetos/">
 				<h2>Exemplo de Inclusão de um funcionário</h2><img src="images/tc_4.jpg">
 			</section>
 
 
-			<section data-background="images/objetos/">
+			<section id="metodo get" data-background="images/objetos/">
 				<h2>Método get : permite acessar os objetos do ArrayList a partir das suas posições</h2><img
 					src="images/tc_5.jpg">
 			</section>
 
 
-			<section data-background="images/objetos/">
+			<section id="metodo size" data-background="images/objetos/">
 				<h2>Método size: indica quantos objetos existem de fato no ArrayList</h2><img src="images/tc_6.jpg">
 			</section>
 
 
-			<section data-background="images/objetos/">
+			<section id="exemplo de como localizar um funcionario" data-background="images/objetos/">
 				<h2>Exemplo de como localizar um funcionário, na coleção, a partir de seu cpf</h2><img
 					src="images/tc_7.jpg">
 			</section>
 
 
-			<section data-background="images/objetos/">
+			<section id="metodo remove" data-background="images/objetos/">
 				<h2>Removendo um objeto da coleção.</h2><img src="images/tc_8.jpg">
 			</section>
 
 
-			<section data-background="images/objetos/">
+			<section id="exemplo de exclusao um funcionario" data-background="images/objetos/">
 				<h2>Exemplo de exclusão de um funcionário a partir de seu cpf.</h2><img src="images/tc_9.jpg">
 			</section>
 
@@ -386,7 +389,7 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 				});
 			</script>
 			<section>
-				<section>
+				<section id="modulo de exercicio 1">
 					<h2>Módulo de Exercícios 1</h2>
 					<p>Para acessar os exercícios, clique na seta para <a href="#" class="navigate-down">baixo</a>.</p>
 				</section>
@@ -446,10 +449,10 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 					<p>Para refazer os exercícios, clique <a id="retry_modulo1">aqui</a>.</p>
 				</section>
 			</section>
-			<section>
+			<section id="video">
 				<video id="video_one" src="video.mp4" controls></video>
 			</section>
-			<section>
+			<section id="audio">
 				<audio id="audio_one" src="audio.mp3" controls></audio>
 			</section>
 			

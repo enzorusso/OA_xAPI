@@ -1,17 +1,1 @@
-[
-  {
-    "nome": "joao",
-    "verbo": "Acessou o Objeto ALGORITMOS E PROGRAMACAO I",
-    "data": "Monday 5th of October 2020 08:03:04 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Escolheu alternativa 'Metodo que identifica o tamanho em metros quadrados de uma peca' do Exercicio 'exe1_1'.",
-    "data": "Monday 5th of October 2020 08:03:05 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Resposta 'errada' do Exercicio 'check1_1'.",
-    "data": "Monday 5th of October 2020 08:03:06 PM"
-  }
-]
+[{"nome":"joao","verbo":"Acessou o Objeto ALGORITMOS E PROGRAMACAO I","data":"Monday 5th of October 2020 08:27:43 PM"},{"nome":"joao","verbo":"Escolheu alternativa 'Metodo que permite calcular a area total da casa' do Exercicio 'exe1_1'.","data":"Monday 5th of October 2020 08:27:44 PM"},{"nome":"joao","verbo":"Acessou o Objeto ALGORITMOS E PROGRAMACAO I","data":"Monday 5th of October 2020 08:28:08 PM"},{"nome":"joao","verbo":"Escolheu alternativa 'Metodo que identifica o tamanho em metros quadrados de uma peca' do Exercicio 'exe1_1'.","data":"Monday 5th of October 2020 08:28:09 PM"},{"nome":"joao","verbo":"Resposta 'errada' do Exercicio 'check1_1'.","data":"Monday 5th of October 2020 08:28:10 PM"},{"nome":"joao","verbo":"Escolheu alternativa 'Aluno ultimo = lista.get(lista.size()-1);' do Exercicio 'exe1_2'.","data":"Monday 5th of October 2020 08:28:16 PM"},{"nome":"joao","verbo":"Resposta 'certa' do Exercicio 'check1_2'.","data":"Monday 5th of October 2020 08:28:17 PM"},{"nome":"joao","verbo":"Desempenho no modulo: 50%","data":"Monday 5th of October 2020 08:28:17 PM"},{"nome":"joao","verbo":"Acessou o Objeto ALGORITMOS E PROGRAMACAO I","data":"Thursday 8th of October 2020 07:18:11 PM"}]
