@@ -11,7 +11,7 @@ $data =  date('l jS \of F Y h:i:s A');
         if(file_exists($file))
         {
             //Trata informação de ID e nome
-            if(!empty($_POST["nome"]) && !empty($_POST["inicio"])){
+            if(!empty($_POST["nome"]) && !empty($_POST["inicio"])){ 
                 $verbo = "Acessou o Objeto ".$nomeObjeto;
 
                 $current_data = file_get_contents($file);
