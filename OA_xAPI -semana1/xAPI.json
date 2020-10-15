@@ -1,162 +1,32 @@
 [
   {
-    "nome": "joao",
-    "verbo": "Acessou a pagina exemplo-de-exclusao-um-funcionario-15",
-    "data": "Thursday 8th of October 2020 08:23:25 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina metodo-remove-14",
-    "data": "Thursday 8th of October 2020 08:23:28 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina exemplo-de-como-localizar-um-funcionario-13",
-    "data": "Thursday 8th of October 2020 08:23:28 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina metodo-size-12",
-    "data": "Thursday 8th of October 2020 08:23:29 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina metodo-get-11",
-    "data": "Thursday 8th of October 2020 08:23:29 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina exemplo-de-inclusao-de-funcionario-10",
-    "data": "Thursday 8th of October 2020 08:23:29 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina metodo-add-9",
-    "data": "Thursday 8th of October 2020 08:23:29 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina exemplo-criacao-do-cadastro-de-funcionario-8",
-    "data": "Thursday 8th of October 2020 08:23:33 PM"
-  },
-  {
-    "nome": "joao",
+    "nome": [{ "name": "nome", "value": "Enzo" }],
     "verbo": "Acessou a pagina criando-objeto-ArrayList-7",
-    "data": "Thursday 8th of October 2020 08:23:33 PM"
+    "data": "Thursday 15th of October 2020 05:50:37 PM"
   },
   {
-    "nome": "joao",
+    "nome": [{ "name": "nome", "value": "Enzo" }],
     "verbo": "Acessou a pagina importando-do-java-6",
-    "data": "Thursday 8th of October 2020 08:23:34 PM"
+    "data": "Thursday 15th of October 2020 05:50:37 PM"
   },
   {
-    "nome": "joao",
+    "nome": [{ "name": "nome", "value": "Enzo" }],
     "verbo": "Acessou a pagina metodos-ArrayList-5",
-    "data": "Thursday 8th of October 2020 08:23:34 PM"
+    "data": "Thursday 15th of October 2020 05:50:37 PM"
   },
   {
-    "nome": "joao",
+    "nome": ["adsd"],
     "verbo": "Acessou a pagina exemplo-cadastro-de-funcionario-4",
-    "data": "Thursday 8th of October 2020 08:23:34 PM"
+    "data": "Thursday 15th of October 2020 05:54:06 PM"
   },
   {
-    "nome": "joao",
+    "nome": ["adsd"],
     "verbo": "Acessou a pagina modelando-com-colecoes-3",
-    "data": "Thursday 8th of October 2020 08:23:35 PM"
+    "data": "Thursday 15th of October 2020 05:54:06 PM"
   },
   {
-    "nome": "joao",
+    "nome": ["adsd"],
     "verbo": "Acessou a pagina colecao-2",
-    "data": "Thursday 8th of October 2020 08:23:35 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina pagina-inicial-1",
-    "data": "Thursday 8th of October 2020 08:23:36 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina colecao-2",
-    "data": "Thursday 8th of October 2020 08:23:37 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina modelando-com-colecoes-3",
-    "data": "Thursday 8th of October 2020 08:23:38 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina exemplo-cadastro-de-funcionario-4",
-    "data": "Thursday 8th of October 2020 08:23:39 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina metodos-ArrayList-5",
-    "data": "Thursday 8th of October 2020 08:23:39 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina importando-do-java-6",
-    "data": "Thursday 8th of October 2020 08:23:39 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina criando-objeto-ArrayList-7",
-    "data": "Thursday 8th of October 2020 08:23:39 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina exemplo-criacao-do-cadastro-de-funcionario-8",
-    "data": "Thursday 8th of October 2020 08:23:40 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina metodo-add-9",
-    "data": "Thursday 8th of October 2020 08:23:40 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina exemplo-de-inclusao-de-funcionario-10",
-    "data": "Thursday 8th of October 2020 08:23:40 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina metodo-get-11",
-    "data": "Thursday 8th of October 2020 08:23:41 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina metodo-size-12",
-    "data": "Thursday 8th of October 2020 08:23:41 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina exemplo-de-como-localizar-um-funcionario-13",
-    "data": "Thursday 8th of October 2020 08:23:41 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina metodo-remove-14",
-    "data": "Thursday 8th of October 2020 08:23:41 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina exemplo-de-exclusao-um-funcionario-15",
-    "data": "Thursday 8th of October 2020 08:23:41 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina modulo-exercicio-1-16",
-    "data": "Thursday 8th of October 2020 08:23:41 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina video-17",
-    "data": "Thursday 8th of October 2020 08:23:42 PM"
-  },
-  {
-    "nome": "joao",
-    "verbo": "Acessou a pagina audio-18",
-    "data": "Thursday 8th of October 2020 08:23:42 PM"
+    "data": "Thursday 15th of October 2020 05:54:06 PM"
   }
 ]

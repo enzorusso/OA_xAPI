@@ -41,7 +41,7 @@ $(document).ready(function () {
 
 	// criando as variáveis e enviando POST para PHP
 	var vUrl = "control.php";
-	var vData = { nome:"joao", inicio:"1" };
+	var vData = { nome:formData, inicio:"1" };
 	$.post(
 		vUrl, 
 		vData
@@ -51,7 +51,7 @@ $(document).ready(function () {
 	$("audio").on('play', function () { //QUANDO DER PLAY
 		var elemento = $(this).attr('id'); 
 		var vUrl = "control.php";
-		var vData = { nome:"joao", audio_play:elemento };
+		var vData = { nome:formData, audio_play:elemento };
 		$.post(
 			vUrl,
 			vData
@@ -66,7 +66,7 @@ $(document).ready(function () {
 		if(seconds != currentTime){
 			var elemento = $(this).attr('id');
 			var vUrl = "control.php";
-			var vData = { nome:"joao", audio_pause:elemento };
+			var vData = { nome:formData, audio_pause:elemento };
 			$.post(
 				vUrl,
 				vData
@@ -77,7 +77,7 @@ $(document).ready(function () {
 	$("audio").on('ended', function () {	//QUANDO ACABAR EXECUCAO
 		var elemento = $(this).attr('id'); 
 		var vUrl = "control.php";
-		var vData = { nome:"joao", audio_ended:elemento };
+		var vData = { nome:formData, audio_ended:elemento };
 		$.post(
 			vUrl,
 			vData
@@ -90,7 +90,7 @@ $(document).ready(function () {
 	$("video").on('play', function () { //QUANDO DER PLAY
 		var elemento = $(this).attr('id'); 
 		var vUrl = "control.php";
-		var vData = { nome:"joao", video_play:elemento };
+		var vData = { nome:formData, video_play:elemento };
 		$.post(
 			vUrl,
 			vData
@@ -105,7 +105,7 @@ $(document).ready(function () {
 		if(seconds != currentTime){
 			var elemento = $(this).attr('id'); 
 			var vUrl = "control.php";
-			var vData = { nome:"joao", video_pause:elemento };
+			var vData = { nome:formData, video_pause:elemento };
 			$.post(
 				vUrl,
 				vData
@@ -116,7 +116,7 @@ $(document).ready(function () {
 	$("video").on('ended', function () {	// QUANDO ACABAR EXECUCAO
 		var elemento = $(this).attr('id'); 
 		var vUrl = "control.php";
-		var vData = { nome:"joao", video_ended:elemento };
+		var vData = { nome:formData, video_ended:elemento };
 		$.post(
 			vUrl,
 			vData
@@ -133,7 +133,7 @@ $(document).ready(function () {
 		var $thisRadio = $(this); //ID da alternativa para pegar o VALUE
 		var value_alternativa = $thisRadio.val(); // VALUE da alternativa
 		var vUrl = "control.php";
-		var vData = { nome:"joao", exercicio:pai, alternativa:value_alternativa };
+		var vData = { nome:formData, exercicio:pai, alternativa:value_alternativa };
 		$.post(
 			vUrl,
 			vData
@@ -155,7 +155,7 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 
 		// criando as variáveis e envia post
 		var vUrl = "control.php";
-		var vData = { nome:"joao", pagina:paginaAtual };
+		var vData = { nome:formData, pagina:paginaAtual };
 		$.post(
 			vUrl, 
 			vData
@@ -169,9 +169,44 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 
 	<div class="reveal">
 
+	<!--LOGIN-->
+		<div class="container" style="padding: 10px;"> 
+			<button id="hide">Ocultar Login</button>
+			<button id="show">Apresentar Login</button>
+			<j id="login" style="display: none;">
+			</br>
+				<h3>Faça seu login</h3>
+				<form name="form" id="form" action="control.php" method="POST"> 
+					<!-- <label>Nome</label> -->
+					<input id="campoNome" type="text" placeholder="Nome" name="nome" class="form-control"/><br/>
+					<!-- <input id="campoEmail" type="text" placeholder="Email" name="email" class="form-control"/><br/> -->
+					<input id="loginButton" type="submit" name="submit" value="Confirmar" class="btn btn-info"/><br/> 
+				</form>
+			</j>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script>
+				formData="";
+				$(document).ready(function(){
+					$("#hide").click(function(){
+						$("#login").hide();
+					});
+					$("#show").click(function(){
+						$("#login").show();
+					});
+					$("#form").submit(function() {
+  					event.preventDefault();
+						formData = []; // array para guardar os valores
+   					for(var valor of $(this).serializeArray()){ //serializeArray vai pegar todos os campos do array
+      				formData.push(valor.value);
+   					}
+					});
+				});
+			</script>
+	</div>
+	<!--LOGIN-->
+
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
-
 			<section id="pagina-inicial-1" data-background="images/objetos/">
 				<h2>Algoritmos e Programação I</h2>
 				<p>Introdução a Coleções: ArrayList</p>
@@ -288,7 +323,7 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 						//ALTEREI
 						bool = "Refez os exercicios";
 						var vUrl = "control.php";
-						var vData = { nome:"joao", retry:bool }; //FUNCIONOU
+						var vData = { nome:formData, retry:bool }; //FUNCIONOU
 						$.post(
 							vUrl,
 							vData
@@ -305,7 +340,7 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 							$("#exe1_1_feedback").html(respostaCerta1_1); 
 							var elementoExe = $(this).attr('id'); 
 							var vUrl = "control.php";
-							var vData = { nome:"joao", feedback:"certa", ex: elementoExe }; //FUNCIONOU
+							var vData = { nome:formData, feedback:"certa", ex: elementoExe }; //FUNCIONOU
 							$.post(
 								vUrl,
 								vData
@@ -315,7 +350,7 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 							$("#exe1_1_feedback").html(respostaErrada1_1); 
 							var elementoExe = $(this).attr('id'); 
 							var vUrl = "control.php";
-							var vData = { nome:"joao", feedback:"errada", ex: elementoExe }; //FUNCIONOU
+							var vData = { nome:formData, feedback:"errada", ex: elementoExe }; //FUNCIONOU
 							$.post(
 								vUrl,
 								vData
@@ -341,9 +376,9 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 							acertos_modulo1++; 
 							$("#exe1_2").css('background-color', '#ADE7A9'); 
 							$("#exe1_2_feedback").html(respostaCerta1_2); 
-							var elementoExe = $(this).attr('id'); 
+							var elementoExe = $(this).attr('id').toString("Modulo 2"); 
 							var vUrl = "control.php";
-							var vData = { nome:"joao", feedback:"certa", ex: elementoExe }; //FUNCIONOU
+							var vData = { nome:formData, feedback:"certa", ex: elementoExe }; //FUNCIONOU
 							$.post(
 								vUrl,
 								vData
@@ -354,7 +389,7 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 							$("#exe1_2_feedback").html(respostaErrada1_2); 
 							var elementoExe = $(this).attr('id'); 
 							var vUrl = "control.php";
-							var vData = { nome:"joao", feedback:"errada", ex: elementoExe }; //FUNCIONOU
+							var vData = { nome:formData, feedback:"errada", ex: elementoExe }; //FUNCIONOU
 							$.post(
 								vUrl,
 								vData
@@ -380,7 +415,7 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 						
 						//ALTEREI
 						var vUrl = "control.php";
-						var vData = { nome:"joao", desempenho:desempenho }; //FUNCIONOU
+						var vData = { nome:formData, desempenho:desempenho }; //FUNCIONOU
 						$.post(
 							vUrl,
 							vData
