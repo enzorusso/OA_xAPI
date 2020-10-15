@@ -1,2 +1,7 @@
-Nessa semana, as dúvidas ficaram em conta de capturar a ação do botão para verificar se o usuário acertou ou errou o exercício. A dúvida: como resgatar as informações do botão que estão lá embaixo e juntar com o scipt do exercício que está lá em cima, no ('input:radio')?
-Outra coisa e na forma de salvar o JSON, estou salvando o desempenho separado, está certo? e também a mensagem que passei no 'retry' está coerente?
+Na semana 4, não tive muitos problemas, apenas uma 'coisa muito louca', que quando eu passa id="2-colecoes", 
+na section da página, por exemplo, o objeto ia direto para a ultima pagina e 
+nao deixava eu alternar as paginas. 
+Tentei também id="2(colecoes)", mas na hora de salvar no JSON, capturava somente o '(colecoes)' sem o numero e ficava
+aprecendo um ( no meio da página.
+Então eu deixei como funcionou id="colecoes-2". Não sei se esse problema não tem a ver com aquela variável inicio = 1,
+mas não faz muito sentido já que o id é uma string. E também não sei se isso é bem um problema, é mais um capricho apenas.
