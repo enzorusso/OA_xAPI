@@ -4,536 +4,536 @@
 
 
 <head>
-	<!-- jpg edit -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- jpg edit -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-	<title>Fabrica de Objetos :: Introducao a Colecoes</title>
+  <title>Fabrica de Objetos :: Introducao a Colecoes</title>
 
-	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-	<meta name="author" content="Fabrica de Objetos">
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Fabrica de Objetos">
 
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<link rel="stylesheet" href="css/reveal.min.css">
-	<link rel="stylesheet" href="css/theme/jpg.css" id="theme"> <!-- JPG -->
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/jpg.css" id="theme"> <!-- JPG -->
 
-	<!-- For syntax highlighting -->
-	<link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
 
-	<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
+  <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-	<!-- Início ENZO -->
-	
+  <!-- Início ENZO -->
+  
 <script>
 $(document).ready(function () {
-	alert("inicio");
-	paginaAtual = 1;
+  alert("inicio");
+  paginaAtual = 1;
 
-	// criando as variáveis e enviando POST para PHP
-	var vUrl = "control.php";
-	var vData = { nome:formData, inicio:"1" };
-	$.post(
-		vUrl, 
-		vData
-	);
+  // criando as variáveis e enviando POST para PHP
+  var vUrl = "control.php";
+  var vData = { nome:formData, inicio:"1" };
+  $.post(
+    vUrl, 
+    vData
+  );
 
-	 //ÁUDIO
-	$("audio").on('play', function () { //QUANDO DER PLAY
-		var elemento = $(this).attr('id'); 
-		var vUrl = "control.php";
-		var vData = { nome:formData, audio_play:elemento };
-		$.post(
-			vUrl,
-			vData
-		);
-	});
+   //ÁUDIO
+  $("audio").on('play', function () { //QUANDO DER PLAY
+    var elemento = $(this).attr('id'); 
+    var vUrl = "control.php";
+    var vData = { nome:formData, audio_play:elemento };
+    $.post(
+      vUrl,
+      vData
+    );
+  });
 
-	$("audio").on('pause', function (zzt) { //QUANDO DER PAUSE
+  $("audio").on('pause', function (zzt) { //QUANDO DER PAUSE
 
-		var seconds = (this).duration;
-		var currentTime = (this).currentTime; 
+    var seconds = (this).duration;
+    var currentTime = (this).currentTime; 
 
-		if(seconds != currentTime){
-			var elemento = $(this).attr('id');
-			var vUrl = "control.php";
-			var vData = { nome:formData, audio_pause:elemento };
-			$.post(
-				vUrl,
-				vData
-			);
-		}
-	});
+    if(seconds != currentTime){
+      var elemento = $(this).attr('id');
+      var vUrl = "control.php";
+      var vData = { nome:formData, audio_pause:elemento };
+      $.post(
+        vUrl,
+        vData
+      );
+    }
+  });
 
-	$("audio").on('ended', function () {	//QUANDO ACABAR EXECUCAO
-		var elemento = $(this).attr('id'); 
-		var vUrl = "control.php";
-		var vData = { nome:formData, audio_ended:elemento };
-		$.post(
-			vUrl,
-			vData
-		);
-	});
-
-
-
-	//VÍDEO
-	$("video").on('play', function () { //QUANDO DER PLAY
-		var elemento = $(this).attr('id'); 
-		var vUrl = "control.php";
-		var vData = { nome:formData, video_play:elemento };
-		$.post(
-			vUrl,
-			vData
-		);
-	});
-
-	$("video").on('pause', function () { //QUANDO DER PAUSE
-
-		var seconds = (this).duration;
-		var currentTime = (this).currentTime; 
-
-		if(seconds != currentTime){
-			var elemento = $(this).attr('id'); 
-			var vUrl = "control.php";
-			var vData = { nome:formData, video_pause:elemento };
-			$.post(
-				vUrl,
-				vData
-			);
-		}
-	});
-
-	$("video").on('ended', function () {	// QUANDO ACABAR EXECUCAO
-		var elemento = $(this).attr('id'); 
-		var vUrl = "control.php";
-		var vData = { nome:formData, video_ended:elemento };
-		$.post(
-			vUrl,
-			vData
-		);
-	});
+  $("audio").on('ended', function () {  //QUANDO ACABAR EXECUCAO
+    var elemento = $(this).attr('id'); 
+    var vUrl = "control.php";
+    var vData = { nome:formData, audio_ended:elemento };
+    $.post(
+      vUrl,
+      vData
+    );
+  });
 
 
 
-	//EXERCÍCIOS
-	$('input:radio').on('click', function(e) {
-		
-		var pai = $(this).parent().parent().attr('id'); //Pega o elemento PAI (exercício)
+  //VÍDEO
+  $("video").on('play', function () { //QUANDO DER PLAY
+    var elemento = $(this).attr('id'); 
+    var vUrl = "control.php";
+    var vData = { nome:formData, video_play:elemento };
+    $.post(
+      vUrl,
+      vData
+    );
+  });
 
-		var $thisRadio = $(this); //ID da alternativa para pegar o VALUE
-		var value_alternativa = $thisRadio.val(); // VALUE da alternativa
-		var vUrl = "control.php";
-		var vData = { nome:formData, exercicio:pai, alternativa:value_alternativa };
-		$.post(
-			vUrl,
-			vData
-		);
-	});
+  $("video").on('pause', function () { //QUANDO DER PAUSE
+
+    var seconds = (this).duration;
+    var currentTime = (this).currentTime; 
+
+    if(seconds != currentTime){
+      var elemento = $(this).attr('id'); 
+      var vUrl = "control.php";
+      var vData = { nome:formData, video_pause:elemento };
+      $.post(
+        vUrl,
+        vData
+      );
+    }
+  });
+
+  $("video").on('ended', function () {  // QUANDO ACABAR EXECUCAO
+    var elemento = $(this).attr('id'); 
+    var vUrl = "control.php";
+    var vData = { nome:formData, video_ended:elemento };
+    $.post(
+      vUrl,
+      vData
+    );
+  });
+
+
+
+  //EXERCÍCIOS
+  $('input:radio').on('click', function(e) {
+    
+    var pai = $(this).parent().parent().attr('id'); //Pega o elemento PAI (exercício)
+
+    var $thisRadio = $(this); //ID da alternativa para pegar o VALUE
+    var value_alternativa = $thisRadio.val(); // VALUE da alternativa
+    var vUrl = "control.php";
+    var vData = { nome:formData, exercicio:pai, alternativa:value_alternativa };
+    $.post(
+      vUrl,
+      vData
+    );
+  });
 });
 
 function startRoutine() { //está tratando da troca de páginas e salvando no json
-	var numeroPp = $(".slides").children().length; //pega o número de páginas do OA.. div que estão dentro de slides..
-	//19 paginas
+  var numeroPp = $(".slides").children().length; //pega o número de páginas do OA.. div que estão dentro de slides..
+  //19 paginas
 
-	var actual_page = window.location.href;
-	var part = actual_page.split('#', 2);
-	var mypage = part[1].split('/', 2);
-	var pagUrl = mypage[1];
+  var actual_page = window.location.href;
+  var part = actual_page.split('#', 2);
+  var mypage = part[1].split('/', 2);
+  var pagUrl = mypage[1];
 
-	if(paginaAtual != pagUrl){
-		paginaAtual = pagUrl;
+  if(paginaAtual != pagUrl){
+    paginaAtual = pagUrl;
 
-		// criando as variáveis e envia post
-		var vUrl = "control.php";
-		var vData = { nome:formData, pagina:paginaAtual };
-		$.post(
-			vUrl, 
-			vData
-		);
-	}
+    // criando as variáveis e envia post
+    var vUrl = "control.php";
+    var vData = { nome:formData, pagina:paginaAtual };
+    $.post(
+      vUrl, 
+      vData
+    );
+  }
 }
 
 </script>
 
 <!-- FIM ENZO -->
 
-	<div class="reveal">
+  <div class="reveal">
 
-	<!--LOGIN-->
-		<div class="container" style="padding: 10px;"> 
-			<button id="hide">Ocultar Login</button>
-			<button id="show">Apresentar Login</button>
-			<j id="login" style="display: none;">
-			</br>
-				<h3>Faça seu login</h3>
-				<form name="form" id="form" action="control.php" method="POST"> 
-					<!-- <label>Nome</label> -->
-					<input id="campoNome" type="text" placeholder="Nome" name="nome" class="form-control"/><br/>
-					<!-- <input id="campoEmail" type="text" placeholder="Email" name="email" class="form-control"/><br/> -->
-					<input id="loginButton" type="submit" name="submit" value="Confirmar" class="btn btn-info"/><br/> 
-				</form>
-			</j>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-			<script>
-				formData="";
-				$(document).ready(function(){
-					$("#hide").click(function(){
-						$("#login").hide();
-					});
-					$("#show").click(function(){
-						$("#login").show();
-					});
-					$("#form").submit(function() {
-  					event.preventDefault();
-						formData = []; // array para guardar os valores
-   					for(var valor of $(this).serializeArray()){ //serializeArray vai pegar todos os campos do array
-      				formData.push(valor.value);
-   					}
-					});
-				});
-			</script>
-	</div>
-	<!--LOGIN-->
+  <!--LOGIN-->
+    <div class="container" style="padding: 10px;"> 
+      <button id="hide">Ocultar Login</button>
+      <button id="show">Apresentar Login</button>
+      <j id="login" style="display: none;">
+      </br>
+        <h3>Faça seu login</h3>
+        <form name="form" id="form" action="control.php" method="POST"> 
+          <!-- <label>Nome</label> -->
+          <input id="campoNome" type="text" placeholder="Nome" name="nome" class="form-control"/><br/>
+          <!-- <input id="campoEmail" type="text" placeholder="Email" name="email" class="form-control"/><br/> -->
+          <input id="loginButton" type="submit" name="submit" value="Confirmar" class="btn btn-info"/><br/> 
+        </form>
+      </j>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script>
+        formData="";
+        $(document).ready(function(){
+          $("#hide").click(function(){
+            $("#login").hide();
+          });
+          $("#show").click(function(){
+            $("#login").show();
+          });
+          $("#form").submit(function() {
+            event.preventDefault();
+            formData = []; // array para guardar os valores
+            for(var valor of $(this).serializeArray()){ //serializeArray vai pegar todos os campos do array
+              formData.push(valor.value);
+            }
+          });
+        });
+      </script>
+  </div>
+  <!--LOGIN-->
 
-		<!-- Any section element inside of this container is displayed as a slide -->
-		<div class="slides">
-			<section id="pagina-inicial-1" data-background="images/objetos/">
-				<h2>Algoritmos e Programação I</h2>
-				<p>Introdução a Coleções: ArrayList</p>
-			</section>
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section id="pagina-inicial-1" data-background="images/objetos/">
+        <h2>Algoritmos e Programação I</h2>
+        <p>Introdução a Coleções: ArrayList</p>
+      </section>
 
-			<section id="colecao-2" data-background="images/objetos/">
-				<h2>Coleção</h2>
-				<p>É um objeto capaz de armazenar referências para um grupo de objetos de uma outra classe.</p>
-				<p class="fragment">Exemplo1: Uma turma de alunos</p>
-				<p class="fragment">Exemplo2: Um cadastro de funcionários</p>
-				<p class="fragment">Exige o uso da classe java.util.ArrayList</p>
-			</section>
+      <section id="colecao-2" data-background="images/objetos/">
+        <h2>Coleção</h2>
+        <p>É um objeto capaz de armazenar referências para um grupo de objetos de uma outra classe.</p>
+        <p class="fragment">Exemplo1: Uma turma de alunos</p>
+        <p class="fragment">Exemplo2: Um cadastro de funcionários</p>
+        <p class="fragment">Exige o uso da classe java.util.ArrayList</p>
+      </section>
 
-			<section id="modelando-com-colecoes-3" data-background="images/objetos/    ">
-				<h2>Modelando com Coleções </h2>
-				<p>Ao modelar um problema, é necessário definir a classe que representa os elementos de uma coleção e
-					aquela que representa a própria coleção (o grupo de objetos). </p>
-				<p class="fragment">Classe Elemento: define os elementos da coleção. É importante identificar as
-					operações que se aplicam a cada elemento. </p>
-				<p class="fragment">Classe Grupo: representa o grupo de objetos. É importante identificar as operações
-					que se aplicam à coleção como um todo. </p>
-			</section>
+      <section id="modelando-com-colecoes-3" data-background="images/objetos/    ">
+        <h2>Modelando com Coleções </h2>
+        <p>Ao modelar um problema, é necessário definir a classe que representa os elementos de uma coleção e
+          aquela que representa a própria coleção (o grupo de objetos). </p>
+        <p class="fragment">Classe Elemento: define os elementos da coleção. É importante identificar as
+          operações que se aplicam a cada elemento. </p>
+        <p class="fragment">Classe Grupo: representa o grupo de objetos. É importante identificar as operações
+          que se aplicam à coleção como um todo. </p>
+      </section>
 
-			<section id="exemplo-cadastro-de-funcionario-4" data-background="images/objetos/ ">
-				<h2>Exemplo: </h2>
-				<p>Cadastro de Funcionários </p>
-				<p class="fragment">Classe Elemento: Funcionário (operações: aumentar salário, alterar nome, ...) </p>
-				<p class="fragment">Classe Grupo: Cadastro (operações: admitir ou demitir funcionário, localizar um
-					funcionário pelo seu cpf,...) </p>
-			</section>
+      <section id="exemplo-cadastro-de-funcionario-4" data-background="images/objetos/ ">
+        <h2>Exemplo: </h2>
+        <p>Cadastro de Funcionários </p>
+        <p class="fragment">Classe Elemento: Funcionário (operações: aumentar salário, alterar nome, ...) </p>
+        <p class="fragment">Classe Grupo: Cadastro (operações: admitir ou demitir funcionário, localizar um
+          funcionário pelo seu cpf,...) </p>
+      </section>
 
-			<section id="metodos-ArrayList-5" data-background="images/objetos/">
-				<h2>Métodos da classe ArrayList</h2><img src="images/tcc_oa.jpg">
-			</section>
+      <section id="metodos-ArrayList-5" data-background="images/objetos/">
+        <h2>Métodos da classe ArrayList</h2><img src="images/tcc_oa.jpg">
+      </section>
 
-			<section id="importando-do-java-6" data-background="images/objetos/">
-				<h2>Importando do pacote java</h2>
-				<p>Para usar um objeto ArrayList é necessário importar o seu pacote, conforme apresentado a seguir:</p>
-				<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">import java.util.ArrayList;</code></pre>
-			</section>
+      <section id="importando-do-java-6" data-background="images/objetos/">
+        <h2>Importando do pacote java</h2>
+        <p>Para usar um objeto ArrayList é necessário importar o seu pacote, conforme apresentado a seguir:</p>
+        <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">import java.util.ArrayList;</code></pre>
+      </section>
 
-			<section id="criando-objeto-ArrayList-7" data-background="images/objetos/   ">
-				<h2>Criando um objeto ArrayList </h2>
-				<p>Construtor: ArrayList<E>() //Cria uma coleção vazia de objetos (inicialmente com 10 referências
-						nulas) </p>
-				<p class="fragment">Exemplo de cadastro de funcionários </p>
-				<p class="fragment">Declaração: ArrayList<Funcionario> cadastro; </p>
-				<p class="fragment">Instanciação: cadastro = new ArrayList<Funcionario>(); </p>
-			</section>
+      <section id="criando-objeto-ArrayList-7" data-background="images/objetos/   ">
+        <h2>Criando um objeto ArrayList </h2>
+        <p>Construtor: ArrayList<E>() //Cria uma coleção vazia de objetos (inicialmente com 10 referências
+            nulas) </p>
+        <p class="fragment">Exemplo de cadastro de funcionários </p>
+        <p class="fragment">Declaração: ArrayList<Funcionario> cadastro; </p>
+        <p class="fragment">Instanciação: cadastro = new ArrayList<Funcionario>(); </p>
+      </section>
 
-			<section id="exemplo-criacao-do-cadastro-de-funcionario-8" data-background="images/objetos/">
-				<h2>Exemplo de criação do cadastro de funcionários</h2><img src="images/tc_2.jpg">
-			</section>
-
-
-			<section id="metodo-add-9" data-background="images/objetos/">
-				<p>Como incluir um objeto no ArrayList</p>
-				<p>Usando o método add</p><img src="images/tc_3.jpg">
-			</section>
-
-			<section id="exemplo-de-inclusao-de-funcionario-10" data-background="images/objetos/">
-				<h2>Exemplo de Inclusão de um funcionário</h2><img src="images/tc_4.jpg">
-			</section>
+      <section id="exemplo-criacao-do-cadastro-de-funcionario-8" data-background="images/objetos/">
+        <h2>Exemplo de criação do cadastro de funcionários</h2><img src="images/tc_2.jpg">
+      </section>
 
 
-			<section id="metodo-get-11" data-background="images/objetos/">
-				<h2>Método get : permite acessar os objetos do ArrayList a partir das suas posições</h2><img
-					src="images/tc_5.jpg">
-			</section>
+      <section id="metodo-add-9" data-background="images/objetos/">
+        <p>Como incluir um objeto no ArrayList</p>
+        <p>Usando o método add</p><img src="images/tc_3.jpg">
+      </section>
+
+      <section id="exemplo-de-inclusao-de-funcionario-10" data-background="images/objetos/">
+        <h2>Exemplo de Inclusão de um funcionário</h2><img src="images/tc_4.jpg">
+      </section>
 
 
-			<section id="metodo-size-12" data-background="images/objetos/">
-				<h2>Método size: indica quantos objetos existem de fato no ArrayList</h2><img src="images/tc_6.jpg">
-			</section>
+      <section id="metodo-get-11" data-background="images/objetos/">
+        <h2>Método get : permite acessar os objetos do ArrayList a partir das suas posições</h2><img
+          src="images/tc_5.jpg">
+      </section>
 
 
-			<section id="exemplo-de-como-localizar-um-funcionario-13" data-background="images/objetos/">
-				<h2>Exemplo de como localizar um funcionário, na coleção, a partir de seu cpf</h2><img
-					src="images/tc_7.jpg">
-			</section>
+      <section id="metodo-size-12" data-background="images/objetos/">
+        <h2>Método size: indica quantos objetos existem de fato no ArrayList</h2><img src="images/tc_6.jpg">
+      </section>
 
 
-			<section id="metodo-remove-14" data-background="images/objetos/">
-				<h2>Removendo um objeto da coleção.</h2><img src="images/tc_8.jpg">
-			</section>
+      <section id="exemplo-de-como-localizar-um-funcionario-13" data-background="images/objetos/">
+        <h2>Exemplo de como localizar um funcionário, na coleção, a partir de seu cpf</h2><img
+          src="images/tc_7.jpg">
+      </section>
 
 
-			<section id="exemplo-de-exclusao-um-funcionario-15" data-background="images/objetos/">
-				<h2>Exemplo de exclusão de um funcionário a partir de seu cpf.</h2><img src="images/tc_9.jpg">
-			</section>
+      <section id="metodo-remove-14" data-background="images/objetos/">
+        <h2>Removendo um objeto da coleção.</h2><img src="images/tc_8.jpg">
+      </section>
 
 
-			<script>
-				$(document).ready(function () {
-					var total_modulo1 = 2; 
-					var acertos_modulo1 = 0; 
-					var FeedbackCerto1 = "Muito Bem."; 
-					var FeedbackErrado1 = "Retome seus estudos. Leia o capítulo 13 do Big Java."; 
-					$("#retry_modulo1").click(function () { 
-						$("input[name='alternativa1_1']").removeAttr('disabled', 'disabled'); 
-						$("input[name='alternativa1_1']:radio").attr("checked", false); 
-						$("#exe1_1").css('background-color', '#F1F1ED'); 
-						$("#check1_1").show(); 
-						$("#exe1_1_feedback").html(""); 
-						$("input[name='alternativa1_2']").removeAttr('disabled', 'disabled'); 
-						$("input[name='alternativa1_2']:radio").attr("checked", false); 
-						$("#exe1_2").css('background-color', '#F1F1ED'); 
-						$("#check1_2").show(); 
-						$("#exe1_2_feedback").html(""); 
-						$("#feedback_modulo1").html(""); 
-						acertos_modulo1 = 0; 
-						$("#textoDesempenho1").html(acertos_modulo1); 
-						
-						//ALTEREI
-						bool = "Refez os exercicios";
-						var vUrl = "control.php";
-						var vData = { nome:formData, retry:bool }; //FUNCIONOU
-						$.post(
-							vUrl,
-							vData
-						);
-						//ALTEREI
-					}); 
-					var resposta_certa1_1 = 4; 
-					var respostaCerta1_1 = "Exige que seja somadas as áreas das peças de toda casa."; 
-					var respostaErrada1_1 = "Todos as demais alternativas referem-se a uma única peça."; 
-					$("#check1_1").click(function () { 
-						if ($("#radio1_1_" + resposta_certa1_1 + "").is(":checked")) { 
-							acertos_modulo1++; 
-							$("#exe1_1").css('background-color', '#ADE7A9'); 
-							$("#exe1_1_feedback").html(respostaCerta1_1); 
-							var elementoExe = $(this).attr('id'); 
-							var vUrl = "control.php";
-							var vData = { nome:formData, feedback:"certa", ex: elementoExe }; //FUNCIONOU
-							$.post(
-								vUrl,
-								vData
-							);
-						} else { 
-							$("#exe1_1").css('background-color', '#E9A8A8'); 
-							$("#exe1_1_feedback").html(respostaErrada1_1); 
-							var elementoExe = $(this).attr('id'); 
-							var vUrl = "control.php";
-							var vData = { nome:formData, feedback:"errada", ex: elementoExe }; //FUNCIONOU
-							$.post(
-								vUrl,
-								vData
-							);
-						} 
-						$("input[name='alternativa1_1']").attr('disabled', 'disabled'); 
-						$("#check1_1").hide(); 
-						var desempenho = (acertos_modulo1 / total_modulo1) * 100; 
-						$("#textoDesempenho1").html(desempenho); 
-						if (desempenho >= 70) { 
-							$("#feedback_modulo1").html(FeedbackCerto1); 
-						} 
-						if (desempenho < 70) { 
-							$("#feedback_modulo1").html(FeedbackErrado1); 
-						} 
-					}); 
-					var resposta_certa1_2 = 4; 
-					var FeedbackArray1_2 = ["Erro: método get sem parâmetro.", "Erro: método size foi chamado sem o objeto ArrayList.", "Erro: método size foi chamado sem o objeto ArrayList", "Erro: método size foi chamado sem o objeto ArrayList"]; 
-					var respostaCerta1_2 = "þParabéns!Þ"; 
-					var respostaErrada1_2 = "þErrado.Þ"; 
-					$("#check1_2").click(function () {	
-						if ($("#radio1_2_" + resposta_certa1_2 + "").is(":checked")) { 
-							acertos_modulo1++; 
-							$("#exe1_2").css('background-color', '#ADE7A9'); 
-							$("#exe1_2_feedback").html(respostaCerta1_2); 
-							var elementoExe = $(this).attr('id').toString("Modulo 2"); 
-							var vUrl = "control.php";
-							var vData = { nome:formData, feedback:"certa", ex: elementoExe }; //FUNCIONOU
-							$.post(
-								vUrl,
-								vData
-							);
-						} 
-						else { 
-							$("#exe1_2").css('background-color', '#E9A8A8'); 
-							$("#exe1_2_feedback").html(respostaErrada1_2); 
-							var elementoExe = $(this).attr('id'); 
-							var vUrl = "control.php";
-							var vData = { nome:formData, feedback:"errada", ex: elementoExe }; //FUNCIONOU
-							$.post(
-								vUrl,
-								vData
-							);
-						} 
-						if ($("#radio1_2_1").is(":checked")) { 
-							$("#exe1_2_feedback").html(FeedbackArray1_2[0]);
-						} 
-						if ($("#radio1_2_2").is(":checked")) { 
-							$("#exe1_2_feedback").html(FeedbackArray1_2[1]); 
-						} 
-						if ($("#radio1_2_3").is(":checked")) { 
-							$("#exe1_2_feedback").html(FeedbackArray1_2[2]); 
-						} 
-						if ($("#radio1_2_4").is(":checked")) { 
-							$("#exe1_2_feedback").html(FeedbackArray1_2[3]); 
-						} 
-						$("input[name='alternativa1_2']").attr('disabled', 'disabled'); 
-						$("#check1_2").hide(); var desempenho = (acertos_modulo1 / total_modulo1) * 100; 
-						$("#textoDesempenho1").html(desempenho); 
-						if (desempenho >= 70) { $("#feedback_modulo1").html(FeedbackCerto1); }
-						if (desempenho < 70) { $("#feedback_modulo1").html(FeedbackErrado1); }
-						
-						//ALTEREI
-						var vUrl = "control.php";
-						var vData = { nome:formData, desempenho:desempenho }; //FUNCIONOU
-						$.post(
-							vUrl,
-							vData
-						);
-						//ALTEREI
-					
-					});
-				});
-			</script>
-			<section>
-				<section id="modulo-exercicio-1-16">
-					<h2>Módulo de Exercícios 1</h2>
-					<p>Para acessar os exercícios, clique na seta para <a href="#" class="navigate-down">baixo</a>.</p>
-				</section>
-				<section>
-					<h2>Exercício 1</h2>
-					<h4>Considerando que você está implementando uma Casa e que essa casa é composta por várias Peças,
-						assinale a alternativa em que a operação descrita é referente à coleção, ou seja, à Casa.</h4>
-					<p>
-						<div id="exe1_1" align="left" style="background-color:#F1F1ED; padding:10px">
-							<p id="teste1"><input type="radio" id="radio1_1_1" name="alternativa1_1" value="Metodo de acesso a identificacao de uma peca" 
-								/> 
-								Método de acesso à identificação de uma peça</p>
-							<p><input type="radio" id="radio1_1_2" name="alternativa1_1" value="Metodo que identifica o tamanho em metros quadrados de uma peca" 
-								/> 
-								Método que identifica o tamanho em metros quadrados de uma peça</p>
-							<p><input type="radio" id="radio1_1_3" name="alternativa1_1" value="Metodo que altera as dimesoes de uma peca" 
-								/> 
-								Método que altera as dimesões de uma peça</p>
-							<p><input type="radio" id="radio1_1_4" name="alternativa1_1" value="Metodo que permite calcular a area total da casa" 
-								/> 
-								Método que permite calcular a área total da casa</p>
-						</div>
-						<div id="exe1_1_feedback" align="center" style="padding:10px"></div><a class="link"><img
-								id="check1_1" src="images/check.png" alt="Check"></a>
-					</p>
-				</section>
-				<section>
-					<h2>Exercício 2</h2>
-					<h4> Na classe Turma, o atributo lista foi definido como um ArrayList de Alunos. Qual dos códigos
-						abaixo devolve o último objeto Aluno inserido na turma. Considere que o objeto ArrayList não
-						está vazio para responder esta questão.</h4>
-					<p>
-						<div id="exe1_2" align="left" style="background-color:#F1F1ED; padding:10px">
-							<p><input type="radio" id="radio1_2_1" name="alternativa1_2" value="Aluno ultimo = lista.get();" 
-								/> 
-								Aluno ultimo = lista.get();</p>
-							<p><input type="radio" id="radio1_2_2" name="alternativa1_2" value="Aluno ultimo = lista.get(size());" 
-								/> 
-								Aluno ultimo = lista.get(size());</p>
-							<p><input type="radio" id="radio1_2_3" name="alternativa1_2" value="Aluno ultimo = lista.get(size()-1);" 
-								/> 
-								Aluno ultimo = lista.get(size()-1);</p>
-							<p><input type="radio" id="radio1_2_4" name="alternativa1_2" value="Aluno ultimo = lista.get(lista.size()-1);" 
-								/> 
-								Aluno ultimo = lista.get(lista.size()-1);</p>
-						</div>
-						<div id="exe1_2_feedback" align="center" style="padding:10px"></div><a class="link"><img
-								id="check1_2" src="images/check.png" alt="Check"></a>
-					</p>
-				</section>
-				<section>
-					<h2>Página de Avaliação</h2><br />
-					<h4>Seu desempenho foi: <a id="textoDesempenho1">0</a>%.</h4>
-					<h4>
-						<div id="feedback_modulo1" align="center" style="padding:10px"></div>
-					</h4><br />
-					<p>Para refazer os exercícios, clique <a id="retry_modulo1">aqui</a>.</p>
-				</section>
-			</section>
-			<section id="video-17">
-				<video id="video_one" src="video.mp4" controls></video>
-			</section>
-			<section id="audio-18">
-				<audio id="audio_one" src="audio.mp3" controls></audio>
-			</section>
-			
-		</div>
-		
-	</div>
-	
-	
-	<script src="lib/js/head.min.js"></script>
-	<script src="js/reveal.min.js"></script>
-	
-	<script>
-
-		// Full list of configuration options available here:
-		// https://github.com/hakimel/reveal.js#configuration
-		Reveal.initialize({
-			controls: true,
-			progress: true,
-			history: true,
-			center: true,
-
-			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-			transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
-
-			// jpg edit - Imagem de fundo ** todo o tempo!
-			// Parallax scrolling
-			// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-			// parallaxBackgroundSize: '2100px 900px',
-
-			// Optional libraries used to extend on reveal.js
-			dependencies: [
-				{ src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
-				{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-				{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
-				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
-				//{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-			]
-		});
-	</script>
+      <section id="exemplo-de-exclusao-um-funcionario-15" data-background="images/objetos/">
+        <h2>Exemplo de exclusão de um funcionário a partir de seu cpf.</h2><img src="images/tc_9.jpg">
+      </section>
 
 
-	<div class="nomeobjeto">
-		Introdução a Coleções </div>
+      <script>
+        $(document).ready(function () {
+          var total_modulo1 = 2; 
+          var acertos_modulo1 = 0; 
+          var FeedbackCerto1 = "Muito Bem."; 
+          var FeedbackErrado1 = "Retome seus estudos. Leia o capítulo 13 do Big Java."; 
+          $("#retry_modulo1").click(function () { 
+            $("input[name='alternativa1_1']").removeAttr('disabled', 'disabled'); 
+            $("input[name='alternativa1_1']:radio").attr("checked", false); 
+            $("#exe1_1").css('background-color', '#F1F1ED'); 
+            $("#check1_1").show(); 
+            $("#exe1_1_feedback").html(""); 
+            $("input[name='alternativa1_2']").removeAttr('disabled', 'disabled'); 
+            $("input[name='alternativa1_2']:radio").attr("checked", false); 
+            $("#exe1_2").css('background-color', '#F1F1ED'); 
+            $("#check1_2").show(); 
+            $("#exe1_2_feedback").html(""); 
+            $("#feedback_modulo1").html(""); 
+            acertos_modulo1 = 0; 
+            $("#textoDesempenho1").html(acertos_modulo1); 
+            
+            //ALTEREI
+            bool = "Refez os exercicios";
+            var vUrl = "control.php";
+            var vData = { nome:formData, retry:bool }; //FUNCIONOU
+            $.post(
+              vUrl,
+              vData
+            );
+            //ALTEREI
+          }); 
+          var resposta_certa1_1 = 4; 
+          var respostaCerta1_1 = "Exige que seja somadas as áreas das peças de toda casa."; 
+          var respostaErrada1_1 = "Todos as demais alternativas referem-se a uma única peça."; 
+          $("#check1_1").click(function () { 
+            if ($("#radio1_1_" + resposta_certa1_1 + "").is(":checked")) { 
+              acertos_modulo1++; 
+              $("#exe1_1").css('background-color', '#ADE7A9'); 
+              $("#exe1_1_feedback").html(respostaCerta1_1); 
+              var elementoExe = $(this).attr('id'); 
+              var vUrl = "control.php";
+              var vData = { nome:formData, feedback:"certa", ex: elementoExe }; //FUNCIONOU
+              $.post(
+                vUrl,
+                vData
+              );
+            } else { 
+              $("#exe1_1").css('background-color', '#E9A8A8'); 
+              $("#exe1_1_feedback").html(respostaErrada1_1); 
+              var elementoExe = $(this).attr('id'); 
+              var vUrl = "control.php";
+              var vData = { nome:formData, feedback:"errada", ex: elementoExe }; //FUNCIONOU
+              $.post(
+                vUrl,
+                vData
+              );
+            } 
+            $("input[name='alternativa1_1']").attr('disabled', 'disabled'); 
+            $("#check1_1").hide(); 
+            var desempenho = (acertos_modulo1 / total_modulo1) * 100; 
+            $("#textoDesempenho1").html(desempenho); 
+            if (desempenho >= 70) { 
+              $("#feedback_modulo1").html(FeedbackCerto1); 
+            } 
+            if (desempenho < 70) { 
+              $("#feedback_modulo1").html(FeedbackErrado1); 
+            } 
+          }); 
+          var resposta_certa1_2 = 4; 
+          var FeedbackArray1_2 = ["Erro: método get sem parâmetro.", "Erro: método size foi chamado sem o objeto ArrayList.", "Erro: método size foi chamado sem o objeto ArrayList", "Erro: método size foi chamado sem o objeto ArrayList"]; 
+          var respostaCerta1_2 = "þParabéns!Þ"; 
+          var respostaErrada1_2 = "þErrado.Þ"; 
+          $("#check1_2").click(function () {  
+            if ($("#radio1_2_" + resposta_certa1_2 + "").is(":checked")) { 
+              acertos_modulo1++; 
+              $("#exe1_2").css('background-color', '#ADE7A9'); 
+              $("#exe1_2_feedback").html(respostaCerta1_2); 
+              var elementoExe = $(this).attr('id').toString("Modulo 2"); 
+              var vUrl = "control.php";
+              var vData = { nome:formData, feedback:"certa", ex: elementoExe }; //FUNCIONOU
+              $.post(
+                vUrl,
+                vData
+              );
+            } 
+            else { 
+              $("#exe1_2").css('background-color', '#E9A8A8'); 
+              $("#exe1_2_feedback").html(respostaErrada1_2); 
+              var elementoExe = $(this).attr('id'); 
+              var vUrl = "control.php";
+              var vData = { nome:formData, feedback:"errada", ex: elementoExe }; //FUNCIONOU
+              $.post(
+                vUrl,
+                vData
+              );
+            } 
+            if ($("#radio1_2_1").is(":checked")) { 
+              $("#exe1_2_feedback").html(FeedbackArray1_2[0]);
+            } 
+            if ($("#radio1_2_2").is(":checked")) { 
+              $("#exe1_2_feedback").html(FeedbackArray1_2[1]); 
+            } 
+            if ($("#radio1_2_3").is(":checked")) { 
+              $("#exe1_2_feedback").html(FeedbackArray1_2[2]); 
+            } 
+            if ($("#radio1_2_4").is(":checked")) { 
+              $("#exe1_2_feedback").html(FeedbackArray1_2[3]); 
+            } 
+            $("input[name='alternativa1_2']").attr('disabled', 'disabled'); 
+            $("#check1_2").hide(); var desempenho = (acertos_modulo1 / total_modulo1) * 100; 
+            $("#textoDesempenho1").html(desempenho); 
+            if (desempenho >= 70) { $("#feedback_modulo1").html(FeedbackCerto1); }
+            if (desempenho < 70) { $("#feedback_modulo1").html(FeedbackErrado1); }
+            
+            //ALTEREI
+            var vUrl = "control.php";
+            var vData = { nome:formData, desempenho:desempenho }; //FUNCIONOU
+            $.post(
+              vUrl,
+              vData
+            );
+            //ALTEREI
+          
+          });
+        });
+      </script>
+      <section>
+        <section id="modulo-exercicio-1-16">
+          <h2>Módulo de Exercícios 1</h2>
+          <p>Para acessar os exercícios, clique na seta para <a href="#" class="navigate-down">baixo</a>.</p>
+        </section>
+        <section>
+          <h2>Exercício 1</h2>
+          <h4>Considerando que você está implementando uma Casa e que essa casa é composta por várias Peças,
+            assinale a alternativa em que a operação descrita é referente à coleção, ou seja, à Casa.</h4>
+          <p>
+            <div id="exe1_1" align="left" style="background-color:#F1F1ED; padding:10px">
+              <p id="teste1"><input type="radio" id="radio1_1_1" name="alternativa1_1" value="Metodo de acesso a identificacao de uma peca" 
+                /> 
+                Método de acesso à identificação de uma peça</p>
+              <p><input type="radio" id="radio1_1_2" name="alternativa1_1" value="Metodo que identifica o tamanho em metros quadrados de uma peca" 
+                /> 
+                Método que identifica o tamanho em metros quadrados de uma peça</p>
+              <p><input type="radio" id="radio1_1_3" name="alternativa1_1" value="Metodo que altera as dimesoes de uma peca" 
+                /> 
+                Método que altera as dimesões de uma peça</p>
+              <p><input type="radio" id="radio1_1_4" name="alternativa1_1" value="Metodo que permite calcular a area total da casa" 
+                /> 
+                Método que permite calcular a área total da casa</p>
+            </div>
+            <div id="exe1_1_feedback" align="center" style="padding:10px"></div><a class="link"><img
+                id="check1_1" src="images/check.png" alt="Check"></a>
+          </p>
+        </section>
+        <section>
+          <h2>Exercício 2</h2>
+          <h4> Na classe Turma, o atributo lista foi definido como um ArrayList de Alunos. Qual dos códigos
+            abaixo devolve o último objeto Aluno inserido na turma. Considere que o objeto ArrayList não
+            está vazio para responder esta questão.</h4>
+          <p>
+            <div id="exe1_2" align="left" style="background-color:#F1F1ED; padding:10px">
+              <p><input type="radio" id="radio1_2_1" name="alternativa1_2" value="Aluno ultimo = lista.get();" 
+                /> 
+                Aluno ultimo = lista.get();</p>
+              <p><input type="radio" id="radio1_2_2" name="alternativa1_2" value="Aluno ultimo = lista.get(size());" 
+                /> 
+                Aluno ultimo = lista.get(size());</p>
+              <p><input type="radio" id="radio1_2_3" name="alternativa1_2" value="Aluno ultimo = lista.get(size()-1);" 
+                /> 
+                Aluno ultimo = lista.get(size()-1);</p>
+              <p><input type="radio" id="radio1_2_4" name="alternativa1_2" value="Aluno ultimo = lista.get(lista.size()-1);" 
+                /> 
+                Aluno ultimo = lista.get(lista.size()-1);</p>
+            </div>
+            <div id="exe1_2_feedback" align="center" style="padding:10px"></div><a class="link"><img
+                id="check1_2" src="images/check.png" alt="Check"></a>
+          </p>
+        </section>
+        <section>
+          <h2>Página de Avaliação</h2><br />
+          <h4>Seu desempenho foi: <a id="textoDesempenho1">0</a>%.</h4>
+          <h4>
+            <div id="feedback_modulo1" align="center" style="padding:10px"></div>
+          </h4><br />
+          <p>Para refazer os exercícios, clique <a id="retry_modulo1">aqui</a>.</p>
+        </section>
+      </section>
+      <section id="video-17">
+        <video id="video_one" src="video.mp4" controls></video>
+      </section>
+      <section id="audio-18">
+        <audio id="audio_one" src="audio.mp3" controls></audio>
+      </section>
+      
+    </div>
+    
+  </div>
+  
+  
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  
+  <script>
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+      // jpg edit - Imagem de fundo ** todo o tempo!
+      // Parallax scrolling
+      // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+      // parallaxBackgroundSize: '2100px 900px',
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+        { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+        //{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+  </script>
+
+
+  <div class="nomeobjeto">
+    Introdução a Coleções </div>
 
 
 </body>
