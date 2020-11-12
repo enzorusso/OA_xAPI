@@ -7,6 +7,8 @@
 	<!-- jpg edit -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	 -->
+
 	<meta charset="UTF-8">
 
 	<title>Fabrica de Objetos :: Introducao a Colecoes</title>
@@ -29,22 +31,92 @@
 	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+
+		<style type="text/css">
+			#login { 
+				text-align: center;
+				top: 50%;
+  			left: 50%;
+				z-index: 1000;
+				height: 100%;
+			}
+		</style>
 </head>
 
 <body>
+
+	<!--LOGIN
+	<l id="botoes">
+		<button id="hide">Ocultar Login</button>
+		<button id="show">Apresentar Login</button>
+	</l>-->
+	<div id="login" > 
+
+		
+		<div> 
+			</br>
+				<h2>Faça seu login</h2>
+				<form name="form" id="form" action="control.php" method="POST"> 
+					<!-- <label>Nome</label> -->
+					<input id="campoNome" type="text" placeholder="Nome" name="nome" class="form-control"/><br/><br/>
+					<input id="campoID" type="text" placeholder="Matrícula" name="identificador" class="form-control"/><br/><br/>
+					<input id="loginButton" type="submit" name="submit" value="Confirmar" class="btn btn-info"/><br/> 
+				</form>
+			</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			formData=""; //variavel global
+			$(document).ready(function(){
+				$(".controls").hide();
+				$("#hide").click(function(){
+				});
+				$("#show").click(function(){
+					$("#login").show();
+				});
+				$("#form").submit(function() {
+					event.preventDefault();
+
+					//DESSA MANEIRA ABAIXO SERIA SOMENTE PARA PEGAR O NOME
+					// formData = []; // array para guardar os valores
+		// for(var valor of $(this).serializeArray()){ //serializeArray vai pegar todos os campos do array
+		//   formData.push(valor.value);
+					// }
+
+					//serializeArray vai pegar todos os campos do array
+					formData = $(form).serializeArray();
+					$("#botoes").hide();
+					$("#login").hide();
+					$(".controls").show();
+					
+					
+
+					// paginaAtual = 1;
+					// // criando as variáveis e enviando POST para PHP
+					// var vUrl = "control.php";
+					// var vData = { nome:formData, inicio:"1" };
+					// $.post(
+					// 	vUrl, 
+					// 	vData
+					// );
+				});
+			});
+		</script>
+</div>
+<!--LOGIN-->
+
 	<!-- Início ENZO -->
 	
 <script>
 $(document).ready(function () {
-	// paginaAtual = 1;
+	paginaAtual = 1;
 
-	// // criando as variáveis e enviando POST para PHP
-	// var vUrl = "control.php";
-	// var vData = { nome:formData, inicio:"1" };
-	// $.post(
-	// 	vUrl, 
-	// 	vData
-	// );
+	// criando as variáveis e enviando POST para PHP
+	var vUrl = "control.php";
+	var vData = { nome:formData, inicio:"1" };
+	$.post(
+		vUrl, 
+		vData
+	);
 
 	 //ÁUDIO
 	$("audio").on('play', function () { //QUANDO DER PLAY
@@ -138,6 +210,22 @@ $(document).ready(function () {
 			vData
 		);
 	});
+
+	window.onbeforeunload = function () { //serve para confirmação se o usuário quer realmente fechar a aba
+    return "Não será apresentado na tela";
+	}
+	window.onunload = function () {
+    //essa evento é executado depois de window.onbeforeunload.
+    //Quando a página é fechada, o navegador executa isso aqui(POST)
+    //quando o post é executado, o navegador tira tudo da memoria RAM
+		//e processador
+    var vUrl = "control.php";
+		var vData = { nome:formData, fechou:"Fechou a aba do Objeto " };
+		$.post(
+			vUrl,
+			vData
+		);
+	}
 });
 
 function startRoutine() { //está tratando da troca de páginas e salvando no json
@@ -168,61 +256,7 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 
 	<div class="reveal">
 
-	<!--LOGIN-->
-		<div class="container" > 
-
-			<l id="botoes">
-				<button id="hide">Ocultar Login</button>
-				<button id="show">Apresentar Login</button>
-			</l>
-
-			<j id="login" style="display:none"> 
-				</br>
-					<h3>Faça seu login</h3>
-					<form name="form" id="form" action="control.php" method="POST"> 
-						<!-- <label>Nome</label> -->
-						<input id="campoNome" type="text" placeholder="Nome" name="nome" class="form-control"/><br/>
-						<input id="campoID" type="text" placeholder="Matrícula" name="identificador" class="form-control"/><br/>
-						<input id="loginButton" type="submit" name="submit" value="Confirmar" class="btn btn-info"/><br/> 
-					</form>
-			</j>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-			<script>
-				formData=""; //variavel global
-				$(document).ready(function(){
-					$("#hide").click(function(){
-						$("#login").hide();
-					});
-					$("#show").click(function(){
-						$("#login").show();
-					});
-					$("#form").submit(function() {
-						event.preventDefault();
-
-						//DESSA MANEIRA ABAIXO SERIA SOMENTE PARA PEGAR O NOME
-						// formData = []; // array para guardar os valores
-            // for(var valor of $(this).serializeArray()){ //serializeArray vai pegar todos os campos do array
-            //   formData.push(valor.value);
-						// }
-
-						//serializeArray vai pegar todos os campos do array
-						formData = $(form).serializeArray();
-						$("#botoes").hide();
-						$("#login").hide();
-
-						paginaAtual = 1;
-						// criando as variáveis e enviando POST para PHP
-						var vUrl = "control.php";
-						var vData = { nome:formData, inicio:"1" };
-						$.post(
-							vUrl, 
-							vData
-						);
-					});
-				});
-			</script>
-	</div>
-	<!--LOGIN-->
+	
 
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
