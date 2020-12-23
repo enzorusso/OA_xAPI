@@ -30,7 +30,7 @@
 
 	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
+		<![endif] -->
 
 		<style type="text/css">
 			#login { 
@@ -50,9 +50,8 @@
 		<button id="hide">Ocultar Login</button>
 		<button id="show">Apresentar Login</button>
 	</l>-->
-	<div id="login" > 
 
-		
+	<div id="login" > 
 		<div> 
 			</br>
 				<h2>Faça seu login</h2>
@@ -78,8 +77,8 @@
 
 					//DESSA MANEIRA ABAIXO SERIA SOMENTE PARA PEGAR O NOME
 					// formData = []; // array para guardar os valores
-		// for(var valor of $(this).serializeArray()){ //serializeArray vai pegar todos os campos do array
-		//   formData.push(valor.value);
+					// for(var valor of $(this).serializeArray()){ //serializeArray vai pegar todos os campos do array
+					//   formData.push(valor.value);
 					// }
 
 					//serializeArray vai pegar todos os campos do array
@@ -87,36 +86,35 @@
 					$("#botoes").hide();
 					$("#login").hide();
 					$(".controls").show();
-					
-					
 
-					// paginaAtual = 1;
-					// // criando as variáveis e enviando POST para PHP
-					// var vUrl = "control.php";
-					// var vData = { nome:formData, inicio:"1" };
-					// $.post(
-					// 	vUrl, 
-					// 	vData
-					// );
+					paginaAtual = 1;
+					// criando as variáveis e enviando POST para PHP
+					var vUrl = "control.php";
+					var vData = { nome:formData, inicio:"1" };
+					$.post(
+						vUrl, 
+						vData
+					);
 				});
 			});
 		</script>
-</div>
+</div>	
+
 <!--LOGIN-->
 
 	<!-- Início ENZO -->
 	
 <script>
 $(document).ready(function () {
-	paginaAtual = 1;
+	// paginaAtual = 1;
 
-	// criando as variáveis e enviando POST para PHP
-	var vUrl = "control.php";
-	var vData = { nome:formData, inicio:"1" };
-	$.post(
-		vUrl, 
-		vData
-	);
+	// // criando as variáveis e enviando POST para PHP
+	// var vUrl = "control.php";
+	// var vData = { nome:formData, inicio:"1" };
+	// $.post(
+	// 	vUrl, 
+	// 	vData
+	// );
 
 	 //ÁUDIO
 	$("audio").on('play', function () { //QUANDO DER PLAY
@@ -249,18 +247,14 @@ function startRoutine() { //está tratando da troca de páginas e salvando no js
 		);
 	}
 }
-
 </script>
 
 <!-- FIM ENZO -->
 
 	<div class="reveal">
-
-	
-
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
-			<section id="pagina-inicial-1" data-background="images/objetos/">
+			<section id="pagina-inicial-1" data-background="images/objetos/">	
 				<h2>Algoritmos e Programação I</h2>
 				<p>Introdução a Coleções: ArrayList</p>
 			</section>

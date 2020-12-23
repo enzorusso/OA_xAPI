@@ -47,7 +47,7 @@ $data =  date('l jS \of F Y h:i:s A');
                 }   
             }
              //Trata informação de ID e pagina
-             if(!empty($_POST["nome"]) && !empty($_POST["pagina"])){
+            if(!empty($_POST["nome"]) && !empty($_POST["pagina"])){
                 $verbo = "Acessou a pagina ".$_POST["pagina"];
 
                 $current_data = file_get_contents($file);
